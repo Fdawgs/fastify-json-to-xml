@@ -1,0 +1,50 @@
+name: CD
+
+# **What it does**: Automatically generates releases and release notes.
+# **Why we have it**: Allows development to focus on higher value work.
+
+on:
+    push:
+        branches:
+            - master
+    # Allows this workflow to be run manually from the Actions tab
+    workflow_dispatch:
+
+permissions:
+    contents: write
+    pull-requests: write
+
+jobs:
+    release:
+        name: Create/Update Release Pull Request
+        runs-on: ubuntu-latest
+        steps:
+            - name: Release Please
+              id: release
+              uses: google-github-actions/release-please-action@v3
+              with:
+                  changelog-types: '[ { "type": "feat", "section": "Features", "hidden": false }, { "type": "fix", "section": "Bug Fixes", "hidden": false }, { "type": "build", "section": "Dependencies", "hidden": false }, { "type": "chore", "section": "Miscellaneous", "hidden": false }, { "type": "ci", "section": "Continuous Integration", "hidden": false }, { "type": "perf", "section": "Improvements", "hidden": false }, { "type": "refactor", "section": "Improvements", "hidden": false }, { "type": "style", "section": "Miscellaneous", "hidden": false }, { "type": "docs", "section": "Documentation", "hidden": false }]'
+                  release-type: node
+                  package-name: fastify-json-to-xml
+
+            - name: Check out repo
+              if: steps.release.outputs.release_created
+              uses: actions/checkout@v3
+              with:
+                  persist-credentials: false
+
+            - name: Setup Node
+              if: steps.release.outputs.release_created
+              uses: actions/setup-node@v3
+              with:
+                  node-version: lts/*
+                  registry-url: https://registry.npmjs.org/
+
+            - name: Publish to NPM
+              if: steps.release.outputs.release_created
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+              # Remove dev values from package.json
+              run: |
+                  npm pkg delete commitlint devDependencies jest scripts
+                  npm publish --ignore-scripts

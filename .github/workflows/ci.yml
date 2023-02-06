@@ -1,0 +1,161 @@
+name: CI
+
+# **What it does**: Runs our tests.
+# **Why we have it**: We want our tests to pass before merging code.
+
+on:
+    push:
+        branches:
+            - master
+        paths-ignore:
+            - "docs/**"
+            - "*.md"
+    pull_request:
+        branches:
+            - master
+        paths-ignore:
+            - "docs/**"
+            - "*.md"
+        types: [opened, ready_for_review, reopened, synchronize]
+
+permissions:
+    contents: read
+
+# This allows a subsequently queued workflow run to interrupt previous runs
+concurrency:
+    group: "${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}"
+    cancel-in-progress: true
+
+jobs:
+    dependency-review:
+        name: Dependency Review
+        if: >
+            github.event.pull_request.draft == false &&
+            github.event_name == 'pull_request'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repo
+              uses: actions/checkout@v3
+              with:
+                  persist-credentials: false
+
+            - name: Dependency review
+              uses: actions/dependency-review-action@v3
+
+    lint:
+        name: Lint Code
+        if: github.event.pull_request.draft == false
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repo
+              uses: actions/checkout@v3
+              with:
+                  persist-credentials: false
+
+            - name: Setup Node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: lts/*
+
+            - name: Install
+              run: npm i --ignore-scripts
+
+            - name: Run ESLint
+              run: npm run lint
+
+            - name: Run Prettier
+              run: npm run lint:prettier:ci
+
+            - name: Run License Checker
+              run: npm run lint:licenses
+
+    commit-lint:
+        name: Lint Commit Messages
+        if: >
+            github.event.pull_request.draft == false &&
+            github.actor != 'dependabot[bot]'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repo
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+                  persist-credentials: false
+
+            - name: Run Commitlint
+              uses: wagoid/commitlint-github-action@v5
+              with:
+                  configFile: ./package.json
+
+    unit-tests:
+        name: Unit Tests
+        if: github.event.pull_request.draft == false
+        strategy:
+            matrix:
+                node-version: [16, 18]
+                os: [macos-latest, ubuntu-latest, windows-latest]
+        runs-on: ${{ matrix.os }}
+        steps:
+            - name: Check out repo
+              uses: actions/checkout@v3
+              with:
+                  persist-credentials: false
+
+            - name: Setup Node ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Install
+              run: npm i --ignore-scripts
+
+            - name: Run tests
+              run: npm run jest:coverage
+
+            - name: Coveralls parallel
+              if: github.repository == 'Fdawgs/fastify-json-to-xml'
+              uses: coverallsapp/github-action@1.1.3
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  parallel: true
+                  flag-name: run-${{ matrix.node-version }}-${{ matrix.os }}
+
+    coverage:
+        name: Aggregate Coverage Calculations
+        needs: unit-tests
+        if: >
+            github.event.pull_request.draft == false &&
+            github.repository == 'Fdawgs/fastify-json-to-xml'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Coveralls finished
+              uses: coverallsapp/github-action@1.1.3
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  parallel-finished: true
+
+    # This job is used to save the PR number in an artifact, for use in the automerge.yml workflow
+    save-pr-number:
+        name: Save Dependabot PR Number
+        needs: unit-tests
+        if: >
+            github.event.pull_request.draft == false &&
+            github.event_name == 'pull_request' &&
+            github.event.pull_request.user.login == 'dependabot[bot]'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repo
+              uses: actions/checkout@v3
+              with:
+                  persist-credentials: false
+
+            - name: Save PR number
+              run: |
+                  mkdir -p ./pr
+                  echo ${{ github.event.number }} > ./pr/NR
+
+            - name: Upload PR number in artifact
+              uses: actions/upload-artifact@v3
+              with:
+                  name: pr
+                  path: pr/
