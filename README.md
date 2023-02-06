@@ -17,7 +17,7 @@ The `fastify-json-to-xml` plugin adds an `onSend` hook that supports serialising
 Install using `npm`:
 
 ```bash
-npm i @fastify/accepts fastify-json-to-xml
+npm i fastify-json-to-xml
 ```
 
 ## Example Usage
@@ -28,7 +28,7 @@ const accepts = require("@fastify/accepts");
 const jsonToXml = require("fastify-json-to-xml");
 
 const server = Fastify();
-server.register(accepts).register(jsonToXml);
+server.register(jsonToXml);
 
 server.get("/", (req, res) => {
 	res.send({ example: "I'm an example value!" });
