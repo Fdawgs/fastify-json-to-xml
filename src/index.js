@@ -1,5 +1,4 @@
 const fp = require("fastify-plugin");
-// eslint-disable-next-line import/no-extraneous-dependencies
 const accepts = require("accepts");
 const js2xmlparser = require("js2xmlparser");
 const secJSON = require("secure-json-parse");
