@@ -6,7 +6,7 @@ const secJSON = require("secure-json-parse");
 /**
  * @author Frazer Smith
  * @description On-send plugin that adds support for serialising 'application/json'
- * responses as XML if the `Accept` HTTP request header only includes
+ * responses into XML if the `Accept` HTTP request header only includes
  * 'application/xml'  or if it explicitly includes the 'application/xml'
  * media type before 'application/json'.
  * @param {object} server - Fastify instance.

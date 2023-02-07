@@ -6,11 +6,11 @@
 [![Coverage Status](https://coveralls.io/repos/github/Fdawgs/fastify-json-to-xml/badge.svg?branch=master)](https://coveralls.io/github/Fdawgs/fastify-json-to-xml?branch=master)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
 
-> Fastify plugin to serialise JSON responses to XML
+> Fastify plugin to serialise JSON responses into XML
 
 ## Intro
 
-The `fastify-json-to-xml` plugin adds an `onSend` hook that supports serialising 'application/json' responses as XML if:
+The `fastify-json-to-xml` plugin adds an `onSend` hook that supports serialising 'application/json' responses into XML if:
 
 -   The `Accept` HTTP request header only includes 'application/xml'
 -   The `Accept` HTTP request header explicitly includes the 'application/xml' media type before 'application/json'
