@@ -8,7 +8,7 @@
 
 > Fastify plugin to serialise JSON responses into XML
 
-## Intro
+## Overview
 
 The `fastify-json-to-xml` plugin adds an `onSend` hook that supports serialising 'application/json' responses into XML if:
 
