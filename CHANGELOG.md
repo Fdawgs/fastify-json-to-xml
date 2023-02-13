@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.0.2](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.0.1...v1.0.2) (2023-02-13)
+
+
+### Documentation
+
+* **readme:** rename intro to overview ([cca3ca5](https://github.com/Fdawgs/fastify-json-to-xml/commit/cca3ca597b2de1edf2317915944f02c9feaf9324))
+
+
+### Continuous integration
+
+* **cd:** use sentence case for changelog headings ([cd367dd](https://github.com/Fdawgs/fastify-json-to-xml/commit/cd367dd72b5c5ad7d95ccf313ad5de0385c70068))
+
+
+### Dependencies
+
+* **deps-dev:** bump dev dependencies ([937baed](https://github.com/Fdawgs/fastify-json-to-xml/commit/937baed302958f691c8b8d12f5a49ffa600976c4))
+
+
+### Miscellaneous
+
+* grammar fixes ([f604823](https://github.com/Fdawgs/fastify-json-to-xml/commit/f6048239ec3d24dc0a14d762053a409a49b6fc19))
+* rename master branch to main ([#6](https://github.com/Fdawgs/fastify-json-to-xml/issues/6)) ([137fcd5](https://github.com/Fdawgs/fastify-json-to-xml/commit/137fcd5b4c8c50c400b547e0cb2dcd4e9313ca04))
+* use sentence case over ap style for titles and headings ([d21749b](https://github.com/Fdawgs/fastify-json-to-xml/commit/d21749b671a6ca174d2c6458f031d66585d1e14c))
+
 ## [1.0.1](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.0.0...v1.0.1) (2023-02-07)
 
 
