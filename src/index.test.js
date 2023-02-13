@@ -95,7 +95,7 @@ describe("JSON-To-XML plugin", () => {
 			},
 			{
 				testName:
-					"application/xml' before 'application/json' in accept HTTP request header",
+					"'application/xml' before 'application/json' in accept HTTP request header",
 				request: {
 					headers: {
 						accept: "application/xml, application/json",
