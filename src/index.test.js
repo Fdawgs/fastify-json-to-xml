@@ -1,7 +1,7 @@
 const Fastify = require("fastify");
 const plugin = require(".");
 
-describe("JSON-To-XML Plugin", () => {
+describe("JSON-To-XML plugin", () => {
 	let server;
 
 	const resPayload = {
@@ -37,7 +37,7 @@ describe("JSON-To-XML Plugin", () => {
 		await server.close();
 	});
 
-	describe("JSON Responses", () => {
+	describe("JSON responses", () => {
 		const jsonTests = [
 			{
 				testName: "JSON payload by default",
@@ -82,7 +82,7 @@ describe("JSON-To-XML Plugin", () => {
 		});
 	});
 
-	describe("XML Responses", () => {
+	describe("XML responses", () => {
 		const xmlTests = [
 			{
 				testName:

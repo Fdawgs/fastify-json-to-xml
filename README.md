@@ -23,7 +23,7 @@ Install using `npm`:
 npm i fastify-json-to-xml
 ```
 
-## Example Usage
+## Example usage
 
 ```js
 const Fastify = require("fastify");
