@@ -8,7 +8,7 @@
 
 > Fastify plugin to serialise JSON responses into XML
 
-## Intro
+## Overview
 
 The `fastify-json-to-xml` plugin adds an `onSend` hook that supports serialising 'application/json' responses into XML if:
 
@@ -23,7 +23,7 @@ Install using `npm`:
 npm i fastify-json-to-xml
 ```
 
-## Example Usage
+## Example usage
 
 ```js
 const Fastify = require("fastify");
