@@ -15,7 +15,7 @@ const secJSON = require("secure-json-parse");
  * replacement character, U+FFFD. Will throw error if invalid characters found when enabled.
  * Disabled by default.
  */
-async function plugin(server, options) {
+async function fastifyJsonToXml(server, options) {
 	server.addHook("onSend", async (req, res, payload) => {
 		if (
 			res.getHeader("content-type")?.includes("application/json") &&
@@ -40,7 +40,9 @@ async function plugin(server, options) {
 	});
 }
 
-module.exports = fp(plugin, {
+module.exports = fp(fastifyJsonToXml, {
 	fastify: "4.x",
 	name: "fastify-json-to-xml",
 });
+module.exports.default = fastifyJsonToXml;
+module.exports.fastifyJsonToXml = fastifyJsonToXml;
