@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.0.2...v1.1.0) (2023-02-15)
+
+
+### Features
+
+* add nodenext compatiblity ([b897446](https://github.com/Fdawgs/fastify-json-to-xml/commit/b8974466022e3d9f21f2dff00066863f07a9f1b5))
+
+
+### Documentation
+
+* **readme:** add acknowledgements section ([bd8f65d](https://github.com/Fdawgs/fastify-json-to-xml/commit/bd8f65d95db29883a15b77d8439ce872cd52744b))
+
 ## [1.0.2](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.0.1...v1.0.2) (2023-02-13)
 
 
