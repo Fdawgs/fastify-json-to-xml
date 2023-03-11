@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.1](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.0...v1.1.1) (2023-03-11)
+
+
+### Documentation
+
+* **changelog:** spelling mistake ([79b540e](https://github.com/Fdawgs/fastify-json-to-xml/commit/79b540ec2fa26db204bf81d65e854efb340ba206))
+
+
+### Dependencies
+
+* **deps:** bump coverallsapp/github-action from 1.1.3 to 1.2.3 ([#12](https://github.com/Fdawgs/fastify-json-to-xml/issues/12)) ([f81bbe3](https://github.com/Fdawgs/fastify-json-to-xml/commit/f81bbe3e1f2f5771c18a9ae95ffd6bbde610cf3f))
+
+
+### Miscellaneous
+
+* ignore bun lockfile ([#13](https://github.com/Fdawgs/fastify-json-to-xml/issues/13)) ([b76e07b](https://github.com/Fdawgs/fastify-json-to-xml/commit/b76e07b89c122874190063872ae00bd09048bbac))
+* **package:** add funding url ([d0d41ec](https://github.com/Fdawgs/fastify-json-to-xml/commit/d0d41ecac4433af926b5cafc09b17f824ea27b52))
+
 ## [1.1.0](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.0.2...v1.1.0) (2023-02-15)
 
 ### Features
