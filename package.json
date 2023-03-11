@@ -21,6 +21,7 @@
 	},
 	"license": "MIT",
 	"author": "Frazer Smith <frazer.dev@outlook.com>",
+	"funding": "https://github.com/sponsors/Fdawgs",
 	"engines": {
 		"node": ">=16.0.0"
 	},
