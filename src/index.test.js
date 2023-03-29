@@ -41,44 +41,37 @@ describe("JSON-To-XML plugin", () => {
 		const jsonTests = [
 			{
 				testName: "JSON payload by default",
-				request: {
-					headers: {
-						accept: "*/*",
-					},
+				headers: {
+					accept: "*/*",
 				},
 			},
 			{
 				testName: "JSON payload",
-				request: {
-					headers: {
-						accept: "application/json",
-					},
+				headers: {
+					accept: "application/json",
 				},
 			},
 			{
 				testName:
 					"JSON payload if 'application/json' before 'application/xml' in accept header",
-				request: {
-					headers: {
-						accept: "application/json, application/xml",
-					},
+				headers: {
+					accept: "application/json, application/xml",
 				},
 			},
 		];
-		jsonTests.forEach((testObject) => {
-			test(`Should return ${testObject.testName}`, async () => {
-				const response = await server.inject({
-					method: "GET",
-					url: "/no-replace",
-					headers: testObject.request.headers,
-				});
 
-				expect(JSON.parse(response.payload)).toEqual(resPayload);
-				expect(response.headers["content-type"]).toBe(
-					"application/json; charset=utf-8"
-				);
-				expect(response.statusCode).toBe(200);
+		test.each(jsonTests)("Should return $testName", async ({ headers }) => {
+			const response = await server.inject({
+				method: "GET",
+				url: "/no-replace",
+				headers,
 			});
+
+			expect(JSON.parse(response.payload)).toEqual(resPayload);
+			expect(response.headers["content-type"]).toBe(
+				"application/json; charset=utf-8"
+			);
+			expect(response.statusCode).toBe(200);
 		});
 	});
 
