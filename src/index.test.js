@@ -87,55 +87,49 @@ describe("JSON-To-XML plugin", () => {
 			{
 				testName:
 					"'application/xml' as only value in accept HTTP request header",
-				request: {
-					headers: {
-						accept: "application/xml",
-					},
+				headers: {
+					accept: "application/xml",
 				},
 			},
 			{
 				testName:
 					"'application/xml' before 'application/json' in accept HTTP request header",
-				request: {
-					headers: {
-						accept: "application/xml, application/json",
-					},
+				headers: {
+					accept: "application/xml, application/json",
 				},
 			},
 		];
-		xmlTests.forEach((testObject) => {
-			describe(`${testObject.testName}`, () => {
-				test("Should return HTTP status code 500 due to invalid XML characters", async () => {
-					const response = await server.inject({
-						method: "GET",
-						url: "/no-replace",
-						headers: testObject.request.headers,
-					});
-
-					expect(response.payload).toBe(
-						'<?xml version="1.0" encoding="UTF-8"?><response><statusCode>500</statusCode><error>Internal Server Error</error><message>in XML document > element "response": element name "$test-key" should not contain characters not allowed in XML names</message></response>'
-					);
-					expect(response.headers["content-type"]).toBe(
-						"application/xml; charset=utf-8"
-					);
-					expect(response.statusCode).toBe(500);
+		describe.each(xmlTests)("$testName", ({ headers }) => {
+			test("Should return HTTP status code 500 due to invalid XML characters", async () => {
+				const response = await server.inject({
+					method: "GET",
+					url: "/no-replace",
+					headers,
 				});
 
-				test("Should return XML payload with invalid XML characters replaced", async () => {
-					const response = await server.inject({
-						method: "GET",
-						url: "/replace",
-						headers: testObject.request.headers,
-					});
+				expect(response.payload).toBe(
+					'<?xml version="1.0" encoding="UTF-8"?><response><statusCode>500</statusCode><error>Internal Server Error</error><message>in XML document > element "response": element name "$test-key" should not contain characters not allowed in XML names</message></response>'
+				);
+				expect(response.headers["content-type"]).toBe(
+					"application/xml; charset=utf-8"
+				);
+				expect(response.statusCode).toBe(500);
+			});
 
-					expect(response.payload).toBe(
-						'<?xml version="1.0" encoding="UTF-8"?><response><test-key>test-value</test-key><�test-key>test-value</�test-key></response>'
-					);
-					expect(response.headers["content-type"]).toBe(
-						"application/xml; charset=utf-8"
-					);
-					expect(response.statusCode).toBe(200);
+			test("Should return XML payload with invalid XML characters replaced", async () => {
+				const response = await server.inject({
+					method: "GET",
+					url: "/replace",
+					headers,
 				});
+
+				expect(response.payload).toBe(
+					'<?xml version="1.0" encoding="UTF-8"?><response><test-key>test-value</test-key><�test-key>test-value</�test-key></response>'
+				);
+				expect(response.headers["content-type"]).toBe(
+					"application/xml; charset=utf-8"
+				);
+				expect(response.statusCode).toBe(200);
 			});
 		});
 	});
