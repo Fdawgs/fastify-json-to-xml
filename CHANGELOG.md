@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.1.1](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.0...v1.1.1) (2023-03-31)
+
+
+### Miscellaneous
+
+* ignore bun lockfile ([#13](https://github.com/Fdawgs/fastify-json-to-xml/issues/13)) ([b76e07b](https://github.com/Fdawgs/fastify-json-to-xml/commit/b76e07b89c122874190063872ae00bd09048bbac))
+* **package:** add funding url ([d0d41ec](https://github.com/Fdawgs/fastify-json-to-xml/commit/d0d41ecac4433af926b5cafc09b17f824ea27b52))
+* **scripts:** add eslint rule file ([0c1ff74](https://github.com/Fdawgs/fastify-json-to-xml/commit/0c1ff74896982a404b5defeb65ffc2ee52e284f7))
+* **scripts:** remove redundant export ([3696c09](https://github.com/Fdawgs/fastify-json-to-xml/commit/3696c09a52eea00916386b1f4b7bdeb75155ecdb))
+* **scripts:** sort eslint comments alphabetically ([7c8240f](https://github.com/Fdawgs/fastify-json-to-xml/commit/7c8240fbbe486af810664428c75b3040af0c92e6))
+* **scripts:** use js script to check licenses ([#14](https://github.com/Fdawgs/fastify-json-to-xml/issues/14)) ([a557627](https://github.com/Fdawgs/fastify-json-to-xml/commit/a5576271073669df6d631a826a1df19b89e252fb))
+
+
+### Documentation
+
+* **changelog:** spelling mistake ([79b540e](https://github.com/Fdawgs/fastify-json-to-xml/commit/79b540ec2fa26db204bf81d65e854efb340ba206))
+* **contributing:** add link to conventional config ([#16](https://github.com/Fdawgs/fastify-json-to-xml/issues/16)) ([e6f58f4](https://github.com/Fdawgs/fastify-json-to-xml/commit/e6f58f4c61a71c69008a51ceb8f6105bd163dd23))
+
+
+### Continuous integration
+
+* **dependabot:** change commit message prefix for gh actions to `ci` ([#15](https://github.com/Fdawgs/fastify-json-to-xml/issues/15)) ([507b01d](https://github.com/Fdawgs/fastify-json-to-xml/commit/507b01dfc9aa9f6a7ccdf36936512c4bc4ec4e3e))
+* **deps:** bump coverallsapp/github-action from 1.2.3 to 2.0.0 ([#17](https://github.com/Fdawgs/fastify-json-to-xml/issues/17)) ([307922a](https://github.com/Fdawgs/fastify-json-to-xml/commit/307922af88c7b68fca88bb3655cd3f1625786c19))
+
+
+### Dependencies
+
+* **deps-dev:** bump dev dependencies ([08b119b](https://github.com/Fdawgs/fastify-json-to-xml/commit/08b119b5a8c971987c15263fa51da5187969c107))
+* **deps:** bump coverallsapp/github-action from 1.1.3 to 1.2.3 ([#12](https://github.com/Fdawgs/fastify-json-to-xml/issues/12)) ([f81bbe3](https://github.com/Fdawgs/fastify-json-to-xml/commit/f81bbe3e1f2f5771c18a9ae95ffd6bbde610cf3f))
+
 ## [1.1.0](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.0.2...v1.1.0) (2023-02-15)
 
 ### Features
