@@ -60,7 +60,8 @@ describe("JSON-To-XML plugin", () => {
 			},
 		];
 
-		test.each(jsonTests)("Should return $testName", async ({ headers }) => {
+		// TODO: use `it.concurrent.each()` once it is no longer experimental
+		it.each(jsonTests)("Returns $testName", async ({ headers }) => {
 			const response = await server.inject({
 				method: "GET",
 				url: "/no-replace",
@@ -93,7 +94,7 @@ describe("JSON-To-XML plugin", () => {
 			},
 		];
 		describe.each(xmlTests)("$testName", ({ headers }) => {
-			test("Should return HTTP status code 500 due to invalid XML characters", async () => {
+			it("Returns HTTP status code 500 due to invalid XML characters", async () => {
 				const response = await server.inject({
 					method: "GET",
 					url: "/no-replace",
@@ -109,7 +110,7 @@ describe("JSON-To-XML plugin", () => {
 				expect(response.statusCode).toBe(500);
 			});
 
-			test("Should return XML payload with invalid XML characters replaced", async () => {
+			it("Returns XML payload with invalid XML characters replaced", async () => {
 				const response = await server.inject({
 					method: "GET",
 					url: "/replace",
