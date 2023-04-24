@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.1.2](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.1...v1.1.2) (2023-04-24)
+
+
+### Dependencies
+
+* **deps-dev:** bump eslint-plugin-jsdoc from 40.3.0 to 43.0.7 ([#24](https://github.com/Fdawgs/fastify-json-to-xml/issues/24)) ([cf3ae94](https://github.com/Fdawgs/fastify-json-to-xml/commit/cf3ae94200264904bb08426de77847597c6d37e3))
+
+
+### Miscellaneous
+
+* **.prettierrc:** enable `arrowParens` option ([#21](https://github.com/Fdawgs/fastify-json-to-xml/issues/21)) ([69ccaa0](https://github.com/Fdawgs/fastify-json-to-xml/commit/69ccaa0cd71ea7eea5a99426c4ec18d2c312a364))
+* support node 14 ([#26](https://github.com/Fdawgs/fastify-json-to-xml/issues/26)) ([61b6d0a](https://github.com/Fdawgs/fastify-json-to-xml/commit/61b6d0a5365174887030df447fce5cc05cd2e695))
+
+
+### Continuous integration
+
+* **cd:** publish to npm with provenance ([#27](https://github.com/Fdawgs/fastify-json-to-xml/issues/27)) ([80fa9fb](https://github.com/Fdawgs/fastify-json-to-xml/commit/80fa9fb29d56001bfb9a464e0da935718a1e006c))
+* **ci:** add node 20 to test matrix ([#25](https://github.com/Fdawgs/fastify-json-to-xml/issues/25)) ([5c4a570](https://github.com/Fdawgs/fastify-json-to-xml/commit/5c4a570b3fda44d65e07e1b28ac33fb0a5534770))
+* **deps:** bump coverallsapp/github-action from 2.0.0 to 2.1.2 ([#23](https://github.com/Fdawgs/fastify-json-to-xml/issues/23)) ([15cb40c](https://github.com/Fdawgs/fastify-json-to-xml/commit/15cb40c4a9247a229a6f4cf4d6b898a953f14639))
+
 ## [1.1.1](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.0...v1.1.1) (2023-03-31)
 
 
