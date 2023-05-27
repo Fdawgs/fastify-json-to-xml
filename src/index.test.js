@@ -53,6 +53,13 @@ describe("JSON-To-XML plugin", () => {
 			},
 			{
 				testName:
+					"JSON body if 'application/json' before '*/*' in accept header",
+				headers: {
+					accept: "application/json, */*",
+				},
+			},
+			{
+				testName:
 					"JSON body if 'application/json' before 'application/xml' in accept header",
 				headers: {
 					accept: "application/json, application/xml",
