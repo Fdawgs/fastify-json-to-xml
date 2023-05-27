@@ -18,7 +18,10 @@ const secJSON = require("secure-json-parse");
 async function fastifyJsonToXml(server, options) {
 	server.addHook("onSend", async (req, res, payload) => {
 		if (
-			res.getHeader("content-type")?.includes("application/json") &&
+			res
+				.getHeader("content-type")
+				?.toString()
+				?.includes("application/json") &&
 			accepts(req).type(["application/json", "application/xml"]) ===
 				"application/xml"
 		) {
