@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.1.3](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.2...v1.1.3) (2023-05-27)
+
+
+### Miscellaneous
+
+* **scripts/license-checker:** resolve eslint jsdoc warning ([#28](https://github.com/Fdawgs/fastify-json-to-xml/issues/28)) ([1644f57](https://github.com/Fdawgs/fastify-json-to-xml/commit/1644f57ace21fc86fb54a0a0e30396ca0516f9e6))
+* **scripts:** fix inline comment style ([e7d008e](https://github.com/Fdawgs/fastify-json-to-xml/commit/e7d008ec957bfc1aa4c5f21aff129567ce9a2b97))
+* use nouns for leading word in function description tags ([#30](https://github.com/Fdawgs/fastify-json-to-xml/issues/30)) ([668ea0e](https://github.com/Fdawgs/fastify-json-to-xml/commit/668ea0e1b12086eefc90c249500dcaca38bf3278))
+
+
+### Bug fixes
+
+* **index:** handle array of content-type headers ([#32](https://github.com/Fdawgs/fastify-json-to-xml/issues/32)) ([b893bec](https://github.com/Fdawgs/fastify-json-to-xml/commit/b893bec4e637bb3a8b2700a1a3ade3707497b283))
+
+
+### Dependencies
+
+* **deps-dev:** bump dev dependencies ([#33](https://github.com/Fdawgs/fastify-json-to-xml/issues/33)) ([a19568b](https://github.com/Fdawgs/fastify-json-to-xml/commit/a19568be2e03a8cc6f05bb414c9ffd6ced28084e))
+
 ## [1.1.2](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.1...v1.1.2) (2023-04-24)
 
 
