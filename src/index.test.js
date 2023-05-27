@@ -4,7 +4,7 @@ const plugin = require(".");
 describe("JSON-To-XML plugin", () => {
 	let server;
 
-	const resPayload = {
+	const resBody = {
 		"test-key": "test-value",
 		"$test-key": "test-value",
 	};
@@ -17,7 +17,7 @@ describe("JSON-To-XML plugin", () => {
 				await noReplaceInvalidCharContext
 					.register(plugin)
 					.get("/no-replace", (req, res) => {
-						res.send(resPayload);
+						res.send(resBody);
 					});
 			})
 			.register(async (replaceInvalidCharContext) => {
@@ -26,7 +26,7 @@ describe("JSON-To-XML plugin", () => {
 						replaceInvalidChars: true,
 					})
 					.get("/replace", (req, res) => {
-						res.send(resPayload);
+						res.send(resBody);
 					});
 			});
 
@@ -40,20 +40,20 @@ describe("JSON-To-XML plugin", () => {
 	describe("JSON responses", () => {
 		const jsonTests = [
 			{
-				testName: "JSON payload by default",
+				testName: "JSON body by default",
 				headers: {
 					accept: "*/*",
 				},
 			},
 			{
-				testName: "JSON payload",
+				testName: "JSON body",
 				headers: {
 					accept: "application/json",
 				},
 			},
 			{
 				testName:
-					"JSON payload if 'application/json' before 'application/xml' in accept header",
+					"JSON body if 'application/json' before 'application/xml' in accept header",
 				headers: {
 					accept: "application/json, application/xml",
 				},
@@ -68,7 +68,7 @@ describe("JSON-To-XML plugin", () => {
 				headers,
 			});
 
-			expect(JSON.parse(response.payload)).toEqual(resPayload);
+			expect(JSON.parse(response.body)).toEqual(resBody);
 			expect(response.headers["content-type"]).toBe(
 				"application/json; charset=utf-8"
 			);
@@ -101,7 +101,7 @@ describe("JSON-To-XML plugin", () => {
 					headers,
 				});
 
-				expect(response.payload).toBe(
+				expect(response.body).toBe(
 					'<?xml version="1.0" encoding="UTF-8"?><response><statusCode>500</statusCode><error>Internal Server Error</error><message>in XML document > element "response": element name "$test-key" should not contain characters not allowed in XML names</message></response>'
 				);
 				expect(response.headers["content-type"]).toBe(
@@ -110,14 +110,14 @@ describe("JSON-To-XML plugin", () => {
 				expect(response.statusCode).toBe(500);
 			});
 
-			it("Returns XML payload with invalid XML characters replaced", async () => {
+			it("Returns XML body with invalid XML characters replaced", async () => {
 				const response = await server.inject({
 					method: "GET",
 					url: "/replace",
 					headers,
 				});
 
-				expect(response.payload).toBe(
+				expect(response.body).toBe(
 					'<?xml version="1.0" encoding="UTF-8"?><response><test-key>test-value</test-key><�test-key>test-value</�test-key></response>'
 				);
 				expect(response.headers["content-type"]).toBe(
