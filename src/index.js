@@ -9,7 +9,7 @@ const secJSON = require("secure-json-parse");
  * responses into XML if the `Accept` HTTP request header only includes
  * 'application/xml'  or if it explicitly includes the 'application/xml'
  * media type before 'application/json'.
- * @param {object} server - Fastify instance.
+ * @param {import("fastify").FastifyInstance} server - Fastify instance.
  * @param {object=} options - Plugin config values.
  * @param {boolean=} options.replaceInvalidChars - Replace invalid XML characters with the Unicode
  * replacement character, U+FFFD. Will throw error if invalid characters found when enabled.
