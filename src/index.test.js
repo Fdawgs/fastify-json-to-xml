@@ -75,7 +75,7 @@ describe("JSON-To-XML plugin", () => {
 				headers,
 			});
 
-			expect(JSON.parse(response.body)).toEqual(resBody);
+			expect(JSON.parse(response.body)).toStrictEqual(resBody);
 			expect(response.headers["content-type"]).toBe(
 				"application/json; charset=utf-8"
 			);
