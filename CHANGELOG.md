@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.1.4](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.3...v1.1.4) (2023-06-24)
+
+
+### Continuous integration
+
+* **deps:** bump coverallsapp/github-action from 2.1.2 to 2.2.0 ([#38](https://github.com/Fdawgs/fastify-json-to-xml/issues/38)) ([09fbe8b](https://github.com/Fdawgs/fastify-json-to-xml/commit/09fbe8bea240c001b44223312be29c3563a97566))
+
+
+### Miscellaneous
+
+* **.eslintrc:** enable additional jest plugin rules ([72235d1](https://github.com/Fdawgs/fastify-json-to-xml/commit/72235d198fa696579be65decb42dd6b229107a4d))
+* **.eslintrc:** enable additional jsdoc plugin rules ([6b55472](https://github.com/Fdawgs/fastify-json-to-xml/commit/6b55472d3971e4bb274702d58427a3fae6c1eb57))
+* **.eslintrc:** only use jest plugin to lint test-related files ([a705bc0](https://github.com/Fdawgs/fastify-json-to-xml/commit/a705bc06ddf4be6ad9d7d7e1992ac52cbccf3d58))
+* import fastify type for server jsdoc param ([f400b7b](https://github.com/Fdawgs/fastify-json-to-xml/commit/f400b7b7570495a3cca20e7634336af81077bb39))
+* **package:** remove global jest mock config values ([900ea51](https://github.com/Fdawgs/fastify-json-to-xml/commit/900ea51e49e426bc9a29e94b6c6ac1eecc19cd83))
+* **package:** set jest coverage threshold ([b44e9f7](https://github.com/Fdawgs/fastify-json-to-xml/commit/b44e9f7e0735ea3aef83b2974955f6fc6a6f324a))
+
+
+### Dependencies
+
+* **deps-dev:** bump dev dependencies ([#39](https://github.com/Fdawgs/fastify-json-to-xml/issues/39)) ([a369e0e](https://github.com/Fdawgs/fastify-json-to-xml/commit/a369e0ed4295c5ca92c95a7b346b7caa7c625427))
+* **deps-dev:** bump eslint-plugin-jsdoc from 44.2.7 to 46.1.0 ([#34](https://github.com/Fdawgs/fastify-json-to-xml/issues/34)) ([2998c60](https://github.com/Fdawgs/fastify-json-to-xml/commit/2998c609bd0bd2159bf2ce11d0bf522c59337904))
+
 ## [1.1.3](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.2...v1.1.3) (2023-05-27)
 
 
