@@ -1,3 +1,5 @@
+"use strict";
+
 const fp = require("fastify-plugin");
 const accepts = require("accepts");
 const js2xmlparser = require("js2xmlparser");
