@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.5](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.4...v1.1.5) (2023-07-08)
+
+
+### Miscellaneous
+
+* **.eslintrc:** sort `extends` array ([8b6eb21](https://github.com/Fdawgs/fastify-json-to-xml/commit/8b6eb21b64c862af016c9ee0bc1a754aa881312d))
+
+
+### Dependencies
+
+* **deps-dev:** add eslint-plugin-regexp ([0842d41](https://github.com/Fdawgs/fastify-json-to-xml/commit/0842d4100930ce6375edaab9d2a6c39b4bda98b3))
+* **deps-dev:** bump dev dependencies ([1e3c7d7](https://github.com/Fdawgs/fastify-json-to-xml/commit/1e3c7d7551e7732b2396ca5ff566a231d5ed5435))
+
+
+### Bug fixes
+
+* add missing strict mode directives ([#43](https://github.com/Fdawgs/fastify-json-to-xml/issues/43)) ([162eafa](https://github.com/Fdawgs/fastify-json-to-xml/commit/162eafa3a37753d2e40fa39604f76b68557b9e36))
+
 ## [1.1.4](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.3...v1.1.4) (2023-06-24)
 
 
