@@ -18,7 +18,7 @@ describe("JSON-To-XML plugin", () => {
 			.register(async (noReplaceInvalidCharContext) => {
 				noReplaceInvalidCharContext
 					.register(plugin)
-					.get("/no-replace", (req, res) => {
+					.get("/no-replace", (_req, res) => {
 						res.send(resBody);
 					});
 			})
@@ -27,7 +27,7 @@ describe("JSON-To-XML plugin", () => {
 					.register(plugin, {
 						replaceInvalidChars: true,
 					})
-					.get("/replace", (req, res) => {
+					.get("/replace", (_req, res) => {
 						res.send(resBody);
 					});
 			});
