@@ -12,7 +12,7 @@ describe("JSON-To-XML plugin", () => {
 	};
 
 	beforeAll(async () => {
-		server = Fastify();
+		server = Fastify({ pluginTimeout: 0 });
 
 		await server
 			.register(async (noReplaceInvalidCharContext) => {
