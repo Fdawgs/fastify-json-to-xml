@@ -12,22 +12,22 @@ describe("JSON-To-XML plugin", () => {
 	};
 
 	beforeAll(async () => {
-		server = Fastify();
+		server = Fastify({ pluginTimeout: 0 });
 
-		await server
+		server
 			.register(async (noReplaceInvalidCharContext) => {
-				await noReplaceInvalidCharContext
+				noReplaceInvalidCharContext
 					.register(plugin)
-					.get("/no-replace", (req, res) => {
+					.get("/no-replace", (_req, res) => {
 						res.send(resBody);
 					});
 			})
 			.register(async (replaceInvalidCharContext) => {
-				await replaceInvalidCharContext
+				replaceInvalidCharContext
 					.register(plugin, {
 						replaceInvalidChars: true,
 					})
-					.get("/replace", (req, res) => {
+					.get("/replace", (_req, res) => {
 						res.send(resBody);
 					});
 			});
