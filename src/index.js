@@ -2,8 +2,8 @@
 
 const fp = require("fastify-plugin");
 const accepts = require("accepts");
-const js2xmlparser = require("js2xmlparser");
-const secJSON = require("secure-json-parse");
+const { parse: xmlParse } = require("js2xmlparser");
+const { parse: secureParse } = require("secure-json-parse");
 
 /**
  * @author Frazer Smith
@@ -28,7 +28,7 @@ async function fastifyJsonToXml(server, options) {
 				"application/xml"
 		) {
 			res.type("application/xml; charset=utf-8");
-			return js2xmlparser.parse("response", secJSON.parse(payload), {
+			return xmlParse("response", secureParse(payload), {
 				replaceInvalidChars: options.replaceInvalidChars || false,
 				format: {
 					doubleQuotes: true,
