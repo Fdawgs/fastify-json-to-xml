@@ -24,7 +24,7 @@ async function fastifyJsonToXml(server, options) {
 				.getHeader("content-type")
 				?.toString()
 				?.includes("application/json") &&
-			accepts(req).type(["application/json", "application/xml"]) ===
+			accepts(req.raw).type(["application/json", "application/xml"]) ===
 				"application/xml" &&
 			typeof payload === "string"
 		) {
