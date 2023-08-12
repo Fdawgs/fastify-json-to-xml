@@ -4,6 +4,9 @@ const Fastify = require("fastify");
 const plugin = require(".");
 
 describe("JSON-To-XML plugin", () => {
+	/**
+	 * @type {Fastify.FastifyInstance}
+	 */
 	let server;
 
 	const resBody = {
