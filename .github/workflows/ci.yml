@@ -110,10 +110,10 @@ jobs:
               run: npm i --ignore-scripts
 
             - name: Run tests
-              run: npm run jest:coverage
+              run: npm run jest:coverage -- --ci
 
             - name: Coveralls parallel
-              if: github.repository == 'Fdawgs/fastify-json-to-xml'
+              if: github.repository == 'Fdawgs/fastify-disablecache'
               uses: coverallsapp/github-action@v2.2.1
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -125,7 +125,7 @@ jobs:
         needs: unit-tests
         if: >
             github.event.pull_request.draft == false &&
-            github.repository == 'Fdawgs/fastify-json-to-xml'
+            github.repository == 'Fdawgs/fastify-disablecache'
         runs-on: ubuntu-latest
         steps:
             - name: Coveralls finished
