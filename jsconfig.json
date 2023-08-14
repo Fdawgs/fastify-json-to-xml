@@ -3,7 +3,8 @@
 		"checkJs": true,
 		"lib": ["ES2021"],
 		"moduleResolution": "nodenext",
-		"resolveJsonModule": true
+		"resolveJsonModule": true,
+		"target": "ES2021"
 	},
 	"exclude": ["dist", "node_modules"]
 }
