@@ -1,5 +1,41 @@
 # Changelog
 
+## [1.1.6](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.5...v1.1.6) (2023-08-16)
+
+
+### Bug fixes
+
+* **index:** check payload is string before converting to obj ([773f705](https://github.com/Fdawgs/fastify-json-to-xml/commit/773f705bf5a238e1c0ec4db3d1be2fb4a86eda38))
+
+
+### Dependencies
+
+* **deps-dev:** bump dev dependencies ([c2494bb](https://github.com/Fdawgs/fastify-json-to-xml/commit/c2494bb3a51ed4a0174eae95667d6bec392b550a))
+* **deps-dev:** bump eslint-config-prettier from 8.10.0 to 9.0.0 ([#50](https://github.com/Fdawgs/fastify-json-to-xml/issues/50)) ([bf1e481](https://github.com/Fdawgs/fastify-json-to-xml/commit/bf1e4812af79a8a49af2928eb0e33d0ea3e0603e))
+* **deps:** bump fastify-plugin from 4.5.0 to 4.5.1 ([ae8d5d4](https://github.com/Fdawgs/fastify-json-to-xml/commit/ae8d5d462a7cdb76f83a011f315314618b4d7980))
+
+
+### Miscellaneous
+
+* **.eslintrc:** error on google closure jsdoc syntax ([70ca201](https://github.com/Fdawgs/fastify-json-to-xml/commit/70ca201212a1232a6f4a53c9a0db657f54d0db1a))
+* add jsconfig; type check js ([900eaad](https://github.com/Fdawgs/fastify-json-to-xml/commit/900eaadff78353c946160b37c3018257f5a34503))
+* **jsconfig:** add target ([ca8947d](https://github.com/Fdawgs/fastify-json-to-xml/commit/ca8947d6d49e398f264b5f0fd28925f61fb2674e))
+* rename `lint:prettier` scripts to reflect their function ([#46](https://github.com/Fdawgs/fastify-json-to-xml/issues/46)) ([18a8b34](https://github.com/Fdawgs/fastify-json-to-xml/commit/18a8b34f90dac2ec2db23202d3dcab9af0e9a4a4))
+* **scripts/license-checker:** use `console.error()` to log failures ([30769af](https://github.com/Fdawgs/fastify-json-to-xml/commit/30769af0c5d6ef2ccf0f62dd5b4f1eab023144e6))
+* use jsdoc syntax for opt params over google closure syntax ([b39c832](https://github.com/Fdawgs/fastify-json-to-xml/commit/b39c832fd1ece0db28e3c7d92309dfe6c5dfa476))
+
+
+### Continuous integration
+
+* **ci:** error on new jest snapshot ([85a664a](https://github.com/Fdawgs/fastify-json-to-xml/commit/85a664aef4c0835a9fd6d484abbbf29ad6e23f62))
+* **deps:** bump coverallsapp/github-action from 2.2.0 to 2.2.1 ([#48](https://github.com/Fdawgs/fastify-json-to-xml/issues/48)) ([50987f6](https://github.com/Fdawgs/fastify-json-to-xml/commit/50987f6388f683dc5a1eece1a76aad6dc2ac4fe5))
+
+
+### Improvements
+
+* deconstruct imports ([#49](https://github.com/Fdawgs/fastify-json-to-xml/issues/49)) ([0d6137e](https://github.com/Fdawgs/fastify-json-to-xml/commit/0d6137ed692da890beda209f69edc92ee14a1490))
+* **index:** pass raw incoming message to `accepts()` ([6154879](https://github.com/Fdawgs/fastify-json-to-xml/commit/6154879ed2b8aeab60f40455e303ba66c067db08))
+
 ## [1.1.5](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.4...v1.1.5) (2023-07-08)
 
 
