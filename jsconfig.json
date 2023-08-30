@@ -2,7 +2,8 @@
 	"compilerOptions": {
 		"checkJs": true,
 		"lib": ["ES2021"],
-		"moduleResolution": "nodenext",
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
 		"resolveJsonModule": true,
 		"target": "ES2021"
 	},
