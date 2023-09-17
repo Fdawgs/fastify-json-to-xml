@@ -30,6 +30,7 @@ async function fastifyJsonToXml(server, options) {
 		) {
 			res.type("application/xml; charset=utf-8");
 			return xmlParse("response", secureParse(payload), {
+				// @ts-ignore: will use `false` if undefined, which is what we want
 				replaceInvalidChars: options.replaceInvalidChars || false,
 				format: {
 					doubleQuotes: true,
