@@ -1,5 +1,39 @@
 # Changelog
 
+## [1.1.7](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.6...v1.1.7) (2023-09-23)
+
+
+### Miscellaneous
+
+* **.gitattributes:** auto lf eol all files ([460dbff](https://github.com/Fdawgs/fastify-json-to-xml/commit/460dbffbf8e597eb6931bbb2cf988b9c9b245d24))
+* add missing `.gitattributes` file ([05e8668](https://github.com/Fdawgs/fastify-json-to-xml/commit/05e8668f8d8ab7b2ad8ea91f333dbc4a5166ec8d))
+* change comment blocks with one line into single block ([386b6e9](https://github.com/Fdawgs/fastify-json-to-xml/commit/386b6e9dd05c361165170deff2aa92fa4627cfac))
+* **eslintrc:** bump ecma version to 2023 ([d51e3bc](https://github.com/Fdawgs/fastify-json-to-xml/commit/d51e3bc4c42775c6f994fdfe07fa7328681b3022))
+* ignore invalid ts errors ([deee1ff](https://github.com/Fdawgs/fastify-json-to-xml/commit/deee1ff92464c807b83ae8059ecfe8f3f00619b5))
+* **jsconfig:** set module to nodenext ([3eabf4b](https://github.com/Fdawgs/fastify-json-to-xml/commit/3eabf4b653285ca79d7816852c30d0b18c508b66))
+* **jsconfig:** target es2022 ([593eb74](https://github.com/Fdawgs/fastify-json-to-xml/commit/593eb745f129e8425e550edea1294dd6811aa847))
+* **package:** explicitly declare js module type ([aba2a18](https://github.com/Fdawgs/fastify-json-to-xml/commit/aba2a18a1008e4df1c59cbde564826a929352cd3))
+* **scripts/license-checker:** declare `copyLeftLicenses` type ([7d03443](https://github.com/Fdawgs/fastify-json-to-xml/commit/7d0344386c5ed1cf755016e3dc4a93a2caf40aab))
+* **scripts/license-checker:** destruct upath module import ([#58](https://github.com/Fdawgs/fastify-json-to-xml/issues/58)) ([6405989](https://github.com/Fdawgs/fastify-json-to-xml/commit/6405989240215d256bf88dd3a6f8c569441ebadf))
+* use `[@see](https://github.com/see)` jsdoc tag for inline comment links ([f2e87f3](https://github.com/Fdawgs/fastify-json-to-xml/commit/f2e87f3208888a67545da4769863884143454d0d))
+
+
+### Continuous integration
+
+* **dependabot:** group dependabot updates ([ec1f7b6](https://github.com/Fdawgs/fastify-json-to-xml/commit/ec1f7b6d8b277a0e78086c856b4cb5d86e1a5120))
+* **deps:** bump actions/checkout from 3 to 4 ([#60](https://github.com/Fdawgs/fastify-json-to-xml/issues/60)) ([6c097a6](https://github.com/Fdawgs/fastify-json-to-xml/commit/6c097a672f7d32f335718fc2076b45891c8e649a))
+* **deps:** bump coverallsapp/github-action from 2.2.1 to 2.2.3 ([#61](https://github.com/Fdawgs/fastify-json-to-xml/issues/61)) ([0044841](https://github.com/Fdawgs/fastify-json-to-xml/commit/004484141c33a3d92795aab73ed3842fee169625))
+
+
+### Improvements
+
+* use `node:` prefix to bypass require.cache call for builtins ([e9743a3](https://github.com/Fdawgs/fastify-json-to-xml/commit/e9743a345c98f73620f88dec19dc359bec3d83b8))
+
+
+### Documentation
+
+* **readme:** update acknowledgements ([19d7507](https://github.com/Fdawgs/fastify-json-to-xml/commit/19d7507668d9996a6999be6c06624cdc972396a6))
+
 ## [1.1.6](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.5...v1.1.6) (2023-08-16)
 
 
