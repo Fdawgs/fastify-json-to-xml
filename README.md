@@ -32,7 +32,7 @@ const jsonToXml = require("fastify-json-to-xml");
 const server = Fastify();
 server.register(jsonToXml);
 
-server.get("/", (req, res) => {
+server.get("/", (_req, res) => {
 	res.send({ example: "I'm an example value!" });
 });
 
@@ -71,7 +71,7 @@ Please adhere to this project's [Code of Conduct](./CODE_OF_CONDUCT.md) when con
 
 ## Acknowledgements
 
--   [**Uzlopak**](https://github.com/uzlopak) - TypeScript support
+-   [**Aras Abbasi**](https://github.com/uzlopak) - TypeScript support
 
 ## License
 
