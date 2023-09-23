@@ -1,11 +1,11 @@
 {
 	"compilerOptions": {
 		"checkJs": true,
-		"lib": ["ES2021"],
+		"lib": ["ES2023"],
 		"module": "NodeNext",
 		"moduleResolution": "NodeNext",
 		"resolveJsonModule": true,
-		"target": "ES2021"
+		"target": "ES2023"
 	},
 	"exclude": ["dist", "node_modules"]
 }
