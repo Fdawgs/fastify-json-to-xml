@@ -18,6 +18,19 @@ const { parse: secureParse } = require("secure-json-parse");
  * Disabled by default.
  */
 async function fastifyJsonToXml(server, options) {
+	const xmlParseOptions = {
+		// @ts-ignore: will use `false` if undefined, which is what we want
+		replaceInvalidChars: options.replaceInvalidChars || false,
+		format: {
+			doubleQuotes: true,
+			// Minify output, like Fastify does with JSON responses by default
+			pretty: false,
+		},
+		declaration: {
+			encoding: "UTF-8",
+		},
+	};
+
 	server.addHook("onSend", async (req, res, payload) => {
 		if (
 			res
@@ -29,18 +42,7 @@ async function fastifyJsonToXml(server, options) {
 			typeof payload === "string"
 		) {
 			res.type("application/xml; charset=utf-8");
-			return xmlParse("response", secureParse(payload), {
-				// @ts-ignore: will use `false` if undefined, which is what we want
-				replaceInvalidChars: options.replaceInvalidChars || false,
-				format: {
-					doubleQuotes: true,
-					// Minify output, like Fastify does with JSON responses by default
-					pretty: false,
-				},
-				declaration: {
-					encoding: "UTF-8",
-				},
-			});
+			return xmlParse("response", secureParse(payload), xmlParseOptions);
 		}
 
 		return payload;
