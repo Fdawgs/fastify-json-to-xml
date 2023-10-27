@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.1.8](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.7...v1.1.8) (2023-10-24)
+
+
+### Dependencies
+
+* **deps-dev:** add eslint-community/eslint-plugin-eslint-comments ([86234b9](https://github.com/Fdawgs/fastify-json-to-xml/commit/86234b90246c6639269f137afa68fd0ad1e81f55))
+
+
+### Miscellaneous
+
+* **.vscode:** add github-markdown-preview to recommended extension ([f2b357f](https://github.com/Fdawgs/fastify-json-to-xml/commit/f2b357f0146b1d146d9b8ebc81af655218735b56))
+* **.vscode:** add gitlens to recommended extensions ([1754b75](https://github.com/Fdawgs/fastify-json-to-xml/commit/1754b75ccf49a9220221ccbbe96b420ec3f0fd5c))
+* **jsconfig:** use es2022 lib ([8cacf7b](https://github.com/Fdawgs/fastify-json-to-xml/commit/8cacf7bef0d4d7d13326d10bc26c37b14952bda4))
+* **scripts/license-checker:** update link to deprecated list ([4cea929](https://github.com/Fdawgs/fastify-json-to-xml/commit/4cea9296cd237d710fbebd604e29c8d54b722d02))
+
+
+### Improvements
+
+* **index:** move options object out of hook ([5c19eee](https://github.com/Fdawgs/fastify-json-to-xml/commit/5c19eee23b14923cd4424eed4a55be37ef60a65a))
+
 ## [1.1.7](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.6...v1.1.7) (2023-09-23)
 
 
