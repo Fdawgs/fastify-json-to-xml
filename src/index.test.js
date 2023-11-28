@@ -36,9 +36,7 @@ describe("JSON-To-XML plugin", () => {
 		await server.ready();
 	});
 
-	afterAll(async () => {
-		await server.close();
-	});
+	afterAll(async () => server.close());
 
 	describe("JSON responses", () => {
 		const jsonTests = [
