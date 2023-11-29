@@ -1,5 +1,37 @@
 # Changelog
 
+## [1.1.9](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.8...v1.1.9) (2023-11-29)
+
+
+### Bug fixes
+
+* **index:** handle missing `options` param ([f3e5907](https://github.com/Fdawgs/fastify-json-to-xml/commit/f3e5907f90def6c276e3019c2604f91f3069a9b8))
+
+
+### Dependencies
+
+* **deps-dev:** bump dev dependencies ([e2392f7](https://github.com/Fdawgs/fastify-json-to-xml/commit/e2392f7b7b0509a5905e19349e24e4a8ddb8297e))
+* **deps-dev:** bump the commitlint group with 2 updates ([#66](https://github.com/Fdawgs/fastify-json-to-xml/issues/66)) ([3b96bd0](https://github.com/Fdawgs/fastify-json-to-xml/commit/3b96bd00810b48f71c174174593685884878b0cc))
+* **deps-dev:** bump the eslint group with 1 update ([#67](https://github.com/Fdawgs/fastify-json-to-xml/issues/67)) ([96e4499](https://github.com/Fdawgs/fastify-json-to-xml/commit/96e449987499dc087e41a7e859fc87bd76066df9))
+* **deps-dev:** remove broken eslint-plugin-security-node ([8c692e5](https://github.com/Fdawgs/fastify-json-to-xml/commit/8c692e58a17f9bec5d1a4fa6d230210706c056c6))
+
+
+### Miscellaneous
+
+* use todo jsdoc tags for inline todo comments ([09bf215](https://github.com/Fdawgs/fastify-json-to-xml/commit/09bf21562d8fa1c66d89bfb74b77463b3546444a))
+
+
+### Continuous integration
+
+* **deps:** bump actions/github-script from 6 to 7 ([#69](https://github.com/Fdawgs/fastify-json-to-xml/issues/69)) ([1e4b61f](https://github.com/Fdawgs/fastify-json-to-xml/commit/1e4b61f0569c81fb79bba9c1917147d6d7f494ed))
+* **deps:** bump actions/setup-node from 3 to 4 ([#65](https://github.com/Fdawgs/fastify-json-to-xml/issues/65)) ([d08ac54](https://github.com/Fdawgs/fastify-json-to-xml/commit/d08ac5478a2880adbcc6a1845b1d3554644b0f41))
+
+
+### Documentation
+
+* **readme:** fix broken ci badge link ([5323f5b](https://github.com/Fdawgs/fastify-json-to-xml/commit/5323f5b1b3882455d0e3736aea577b5945c84487))
+* **readme:** use full cjs for example ([0628300](https://github.com/Fdawgs/fastify-json-to-xml/commit/062830066b9c0837eb986480d07d55e63555148c))
+
 ## [1.1.8](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.7...v1.1.8) (2023-10-24)
 
 
