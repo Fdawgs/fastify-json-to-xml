@@ -36,7 +36,10 @@ server.get("/", (_req, res) => {
 	res.send({ example: "I'm an example value!" });
 });
 
-await server.listen({ port: 3000 });
+server.listen(3000, (err) => {
+	if (err) throw err;
+	console.log("Server listening on 3000");
+});
 ```
 
 Make an HTTP GET request to the route above, with application/xml in the `accept` HTTP request header, and the results will look like so:
