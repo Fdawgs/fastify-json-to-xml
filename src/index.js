@@ -19,8 +19,7 @@ const { parse: secureParse } = require("secure-json-parse");
  */
 async function fastifyJsonToXml(server, options) {
 	const xmlParseOptions = {
-		// @ts-ignore: will use `false` if undefined, which is what we want
-		replaceInvalidChars: options.replaceInvalidChars || false,
+		replaceInvalidChars: options?.replaceInvalidChars === true,
 		format: {
 			doubleQuotes: true,
 			// Minify output, like Fastify does with JSON responses by default
