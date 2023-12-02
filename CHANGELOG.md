@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.10](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.9...v1.1.10) (2023-12-02)
+
+
+### Miscellaneous
+
+* **.eslintrc:** update no-param-reassign rule to ignore obj refs ([ec87cd9](https://github.com/Fdawgs/fastify-json-to-xml/commit/ec87cd9067691d5eb319dd1522c264d3940c05eb))
+
+
+### Continuous integration
+
+* **dependabot:** ignore release-please-action major updates ([5109f0f](https://github.com/Fdawgs/fastify-json-to-xml/commit/5109f0fb2dcc7e30a603885e117344954befbc61))
+
 ## [1.1.9](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.8...v1.1.9) (2023-11-29)
 
 
