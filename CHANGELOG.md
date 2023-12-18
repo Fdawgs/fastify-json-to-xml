@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.10](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.9...v1.1.10) (2023-12-18)
+
+
+### Continuous integration
+
+* **dependabot:** ignore release-please-action major updates ([9c4232e](https://github.com/Fdawgs/fastify-json-to-xml/commit/9c4232e9a90785fce81502e499c596c1a665af1e))
+* **deps:** bump actions/upload-artifact from 3 to 4 ([#74](https://github.com/Fdawgs/fastify-json-to-xml/issues/74)) ([910088d](https://github.com/Fdawgs/fastify-json-to-xml/commit/910088d8286a7e0fded9b12584ff0668efc215cb))
+* **deps:** bump github/codeql-action from 2 to 3 ([#75](https://github.com/Fdawgs/fastify-json-to-xml/issues/75)) ([3823ca5](https://github.com/Fdawgs/fastify-json-to-xml/commit/3823ca5ac153099540718c80db589d42404d85d5))
+
 ## [1.1.9](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.8...v1.1.9) (2023-11-29)
 
 
