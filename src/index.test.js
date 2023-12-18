@@ -68,7 +68,7 @@ describe("JSON-To-XML plugin", () => {
 			},
 		];
 
-		/** @todo use `it.concurrent.each()` once it is no longer experimental */
+		/** @todo Use `it.concurrent.each()` once it is no longer experimental. */
 		it.each(jsonTests)("Returns $testName", async ({ headers }) => {
 			const response = await server.inject({
 				method: "GET",
