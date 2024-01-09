@@ -1,5 +1,34 @@
 # Changelog
 
+## [1.1.10](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.9...v1.1.10) (2024-01-09)
+
+
+### Dependencies
+
+* **deps-dev:** bump dev dependencies ([50da0ec](https://github.com/Fdawgs/fastify-json-to-xml/commit/50da0eca6cdb9301edbe91eedcba42cacaca5324))
+
+
+### Miscellaneous
+
+* jsdoc comments must be complete sentences ([b0ed3d9](https://github.com/Fdawgs/fastify-json-to-xml/commit/b0ed3d9703dc11bfb9ffaa5d6c5a89e72b47fd72))
+* **license:** update license year ([54808a9](https://github.com/Fdawgs/fastify-json-to-xml/commit/54808a96fe09c317ab17a352d1e83a3b87b739d7))
+* **package:** add `lint:fix` script ([58b6a02](https://github.com/Fdawgs/fastify-json-to-xml/commit/58b6a021296e0805c6a78218fced86bb80c983fb))
+* **package:** run `lint:prettier` in `test` script ([47b22fd](https://github.com/Fdawgs/fastify-json-to-xml/commit/47b22fd31997775556529f5f79c4cef7aa25d882))
+* use shared files from `fdawgs/.github` ([f0d7bc8](https://github.com/Fdawgs/fastify-json-to-xml/commit/f0d7bc83cae96c141fea973b2725877c0251cfd7))
+
+
+### Continuous integration
+
+* **cd:** add github packages publish job ([da0bd00](https://github.com/Fdawgs/fastify-json-to-xml/commit/da0bd0047fd9d9634889271c92ca625d64836d2c))
+* **dependabot:** ignore release-please-action major updates ([9c4232e](https://github.com/Fdawgs/fastify-json-to-xml/commit/9c4232e9a90785fce81502e499c596c1a665af1e))
+* **deps:** bump actions/upload-artifact from 3 to 4 ([#74](https://github.com/Fdawgs/fastify-json-to-xml/issues/74)) ([910088d](https://github.com/Fdawgs/fastify-json-to-xml/commit/910088d8286a7e0fded9b12584ff0668efc215cb))
+* **deps:** bump github/codeql-action from 2 to 3 ([#75](https://github.com/Fdawgs/fastify-json-to-xml/issues/75)) ([3823ca5](https://github.com/Fdawgs/fastify-json-to-xml/commit/3823ca5ac153099540718c80db589d42404d85d5))
+
+
+### Documentation
+
+* **readme:** update links ([7325c16](https://github.com/Fdawgs/fastify-json-to-xml/commit/7325c1656dd656d8f25b764099ef2fc46ed0f444))
+
 ## [1.1.9](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.8...v1.1.9) (2023-11-29)
 
 
