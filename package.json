@@ -15,7 +15,10 @@
 	"main": "src/index.js",
 	"type": "commonjs",
 	"types": "types/index.d.ts",
-	"repository": "git+https://github.com/Fdawgs/fastify-json-to-xml.git",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Fdawgs/fastify-json-to-xml.git"
+	},
 	"homepage": "https://github.com/Fdawgs/fastify-json-to-xml",
 	"bugs": {
 		"url": "https://github.com/Fdawgs/fastify-json-to-xml/issues"
