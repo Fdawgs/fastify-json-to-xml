@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.1.11](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.10...v1.1.11) (2024-01-25)
+
+
+### Dependencies
+
+* **deps-dev:** bump dev dependencies ([a3e7630](https://github.com/Fdawgs/fastify-json-to-xml/commit/a3e7630dae1814785010ce4da388b1f239e91fc3))
+
+
+### Miscellaneous
+
+* **.vscode:** use local prettier version ([ec5b22c](https://github.com/Fdawgs/fastify-json-to-xml/commit/ec5b22c2db39a025ba1ce1722f9efec81245ac5e))
+* **jsconfig:** remove `lib`; `target` will be used in absence ([eb569b2](https://github.com/Fdawgs/fastify-json-to-xml/commit/eb569b297f333f605f3c9e79d35317af9e243b41))
+* **package:** fix `repository` structure ([b1838aa](https://github.com/Fdawgs/fastify-json-to-xml/commit/b1838aaf8f861c28335f552c37849c6a030fd98c))
+* **scripts/license-checker:** handle old license arrays or missing ([6efa793](https://github.com/Fdawgs/fastify-json-to-xml/commit/6efa7936706f13e64b5cfb7b772ba8fe2220b5fb))
+
+
+### Continuous integration
+
+* **automerge:** optimise inline js scripts ([d807706](https://github.com/Fdawgs/fastify-json-to-xml/commit/d8077068c4a8228f78c77c0e8175f940a0dad736))
+* **cd:** publish to github packages with provenance ([ed9ddcf](https://github.com/Fdawgs/fastify-json-to-xml/commit/ed9ddcfd367a5b9d80622d9d5cdf383841c289c6))
+* **cd:** use `main` environment for publish-npm job ([5f52584](https://github.com/Fdawgs/fastify-json-to-xml/commit/5f52584daecdfa9bbe6789564a232bc97a1dfd09))
+
 ## [1.1.10](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.9...v1.1.10) (2024-01-09)
 
 
