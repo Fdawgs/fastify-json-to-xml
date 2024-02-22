@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.1.12](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.11...v1.1.12) (2024-02-22)
+
+
+### Dependencies
+
+* **deps-dev:** bump dev dependencies ([2725ec2](https://github.com/Fdawgs/fastify-json-to-xml/commit/2725ec24dd8e79b33c01bf7d2c4ea98e919b3da1))
+* **deps-dev:** bump husky from 8.0.3 to 9.0.6 ([#85](https://github.com/Fdawgs/fastify-json-to-xml/issues/85)) ([290f3fb](https://github.com/Fdawgs/fastify-json-to-xml/commit/290f3fbac24e77ccdee0e5ea895fc3e56e3e00bd))
+
+
+### Miscellaneous
+
+* **.husky:** migrate hooks to v9 style ([4d2590d](https://github.com/Fdawgs/fastify-json-to-xml/commit/4d2590dc4e5236004b4e7036a4bb4070b881f360))
+* **.vscode:** fix `prettier.prettierPath` setting ([eb27d09](https://github.com/Fdawgs/fastify-json-to-xml/commit/eb27d094b9581f413eb492ddacdba83f9fd9eb9f))
+* **index:** sort options object keys ascending ([580001b](https://github.com/Fdawgs/fastify-json-to-xml/commit/580001b2d8af5753121e801c2a4f579202691e18))
+
+
+### Continuous integration
+
+* **deps:** bump actions/dependency-review-action from 3 to 4 ([#84](https://github.com/Fdawgs/fastify-json-to-xml/issues/84)) ([da014fc](https://github.com/Fdawgs/fastify-json-to-xml/commit/da014fc8e5d5e99accf895ac068f70c9f4252e20))
+
 ## [1.1.11](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.10...v1.1.11) (2024-01-25)
 
 
