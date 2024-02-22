@@ -19,15 +19,15 @@ const { parse: secureParse } = require("secure-json-parse");
  */
 async function fastifyJsonToXml(server, options) {
 	const xmlParseOptions = {
-		replaceInvalidChars: options?.replaceInvalidChars === true,
+		declaration: {
+			encoding: "UTF-8",
+		},
 		format: {
 			doubleQuotes: true,
 			// Minify output, like Fastify does with JSON responses by default
 			pretty: false,
 		},
-		declaration: {
-			encoding: "UTF-8",
-		},
+		replaceInvalidChars: options?.replaceInvalidChars === true,
 	};
 
 	server.addHook("onSend", async (req, res, payload) => {
