@@ -1,5 +1,34 @@
 # Changelog
 
+## [1.1.12](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.11...v1.1.12) (2024-04-04)
+
+
+### Dependencies
+
+* **deps-dev:** bump dev dependencies ([2725ec2](https://github.com/Fdawgs/fastify-json-to-xml/commit/2725ec24dd8e79b33c01bf7d2c4ea98e919b3da1))
+* **deps-dev:** bump husky from 8.0.3 to 9.0.6 ([#85](https://github.com/Fdawgs/fastify-json-to-xml/issues/85)) ([290f3fb](https://github.com/Fdawgs/fastify-json-to-xml/commit/290f3fbac24e77ccdee0e5ea895fc3e56e3e00bd))
+* **deps-dev:** bump the commitlint group with 2 updates ([#89](https://github.com/Fdawgs/fastify-json-to-xml/issues/89)) ([a7f2d3a](https://github.com/Fdawgs/fastify-json-to-xml/commit/a7f2d3a81cd5f08a4924a88fe2ab48c09e13ee17))
+
+
+### Miscellaneous
+
+* **.husky:** migrate hooks to v9 style ([4d2590d](https://github.com/Fdawgs/fastify-json-to-xml/commit/4d2590dc4e5236004b4e7036a4bb4070b881f360))
+* **.vscode:** fix `prettier.prettierPath` setting ([eb27d09](https://github.com/Fdawgs/fastify-json-to-xml/commit/eb27d094b9581f413eb492ddacdba83f9fd9eb9f))
+* **index:** inline comment re export types ([8afc6fa](https://github.com/Fdawgs/fastify-json-to-xml/commit/8afc6fa1ea6f8876f945687cd587a1c02e9dc9e9))
+* **index:** sort options object keys ascending ([580001b](https://github.com/Fdawgs/fastify-json-to-xml/commit/580001b2d8af5753121e801c2a4f579202691e18))
+* **jsconfig:** enable strict type checking ([101e975](https://github.com/Fdawgs/fastify-json-to-xml/commit/101e97550524918a7b4c3c011052e7517cbf17d6))
+
+
+### Continuous integration
+
+* **cd:** standardise [@fdawgs](https://github.com/fdawgs) cd workflows ([0d204c5](https://github.com/Fdawgs/fastify-json-to-xml/commit/0d204c5cea1117b5df73cca3d4661299a411b9f8))
+* **ci:** audit package signatures and provenance attestations ([fdabf8f](https://github.com/Fdawgs/fastify-json-to-xml/commit/fdabf8f0f914fbce676713fa93b5324aaf3650d7))
+* **ci:** standardise [@fdawgs](https://github.com/fdawgs) ci workflows ([21d84cf](https://github.com/Fdawgs/fastify-json-to-xml/commit/21d84cfb8fae1a2ab92d3019daf6e1642d94c0aa))
+* **dependabot:** add `[@eslint-community](https://github.com/eslint-community)` scoped deps to eslint group ([e09f24e](https://github.com/Fdawgs/fastify-json-to-xml/commit/e09f24e6878a82064a556a2d0aa352fd6a1a9d19))
+* **deps:** bump actions/dependency-review-action from 3 to 4 ([#84](https://github.com/Fdawgs/fastify-json-to-xml/issues/84)) ([da014fc](https://github.com/Fdawgs/fastify-json-to-xml/commit/da014fc8e5d5e99accf895ac068f70c9f4252e20))
+* **deps:** bump wagoid/commitlint-github-action from 5 to 6 ([#90](https://github.com/Fdawgs/fastify-json-to-xml/issues/90)) ([ffb7588](https://github.com/Fdawgs/fastify-json-to-xml/commit/ffb7588601645200e13e84ce08dd5637d42d9a1f))
+* use latest node lts version ([73064eb](https://github.com/Fdawgs/fastify-json-to-xml/commit/73064eb0f7dad8a5f2fecd1b25674cb40b2d898b))
+
 ## [1.1.11](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.10...v1.1.11) (2024-01-25)
 
 
