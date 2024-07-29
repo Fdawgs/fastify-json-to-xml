@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.13](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.12...v1.1.13) (2024-05-03)
+
+
+### Miscellaneous
+
+* **package:** change author email ([1bbb7a3](https://github.com/Fdawgs/fastify-json-to-xml/commit/1bbb7a390b66596ae009b4e306c4d492804402f8))
+
 ## [1.1.12](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.11...v1.1.12) (2024-05-01)
 
 
