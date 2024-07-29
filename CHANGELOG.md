@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.13](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.12...v1.1.13) (2024-07-29)
+
+
+### Miscellaneous
+
+* **package:** change author email ([1bbb7a3](https://github.com/Fdawgs/fastify-json-to-xml/commit/1bbb7a390b66596ae009b4e306c4d492804402f8))
+
+
+### Continuous integration
+
+* **deps:** bump coverallsapp/github-action from 2.2.3 to 2.3.0 ([#98](https://github.com/Fdawgs/fastify-json-to-xml/issues/98)) ([aa940f1](https://github.com/Fdawgs/fastify-json-to-xml/commit/aa940f13b12f53238c86c65f309ebb4b77461cec))
+
 ## [1.1.12](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.11...v1.1.12) (2024-05-01)
 
 
