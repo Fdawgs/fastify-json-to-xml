@@ -23,6 +23,8 @@ Install using `npm`:
 npm i fastify-json-to-xml
 ```
 
+For Fastify v4.x support, use `fastify-json-to-xml@1.1.12`.
+
 ## Example usage
 
 ```js
