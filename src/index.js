@@ -50,7 +50,7 @@ async function fastifyJsonToXml(server, options) {
 }
 
 module.exports = fp(fastifyJsonToXml, {
-	fastify: "4.x",
+	fastify: "5.x",
 	name: "fastify-json-to-xml",
 }); // CommonJS export
 module.exports.default = fastifyJsonToXml; // ESM default export
