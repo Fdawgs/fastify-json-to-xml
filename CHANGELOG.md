@@ -1,5 +1,32 @@
 # Changelog
 
+## [2.0.0](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.12...v2.0.0) (2024-10-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* dropped support for fastify v4.x
+* dropped support for node 14, 16 and 18
+
+### Continuous integration
+
+* **cd:** sort release note sections alphabetically ([19bdcde](https://github.com/Fdawgs/fastify-json-to-xml/commit/19bdcdebd12bc2d09c85a7b8c1d90f0da0c5ec62))
+* **deps:** bump coverallsapp/github-action from 2.2.3 to 2.3.0 ([#98](https://github.com/Fdawgs/fastify-json-to-xml/issues/98)) ([aa940f1](https://github.com/Fdawgs/fastify-json-to-xml/commit/aa940f13b12f53238c86c65f309ebb4b77461cec))
+
+
+### Features
+
+* support fastify v5.x ([42d5c5d](https://github.com/Fdawgs/fastify-json-to-xml/commit/42d5c5db2e7d41eb74bc1a16c032a25266e24f56))
+
+
+### Miscellaneous
+
+* **.husky/commit-msg:** remove `npx` usage ([ba3698d](https://github.com/Fdawgs/fastify-json-to-xml/commit/ba3698dbfa692e1ff389fc95bc9ebd0ed816e64a))
+* **.npmrc:** enforce strict engine checks ([1877f79](https://github.com/Fdawgs/fastify-json-to-xml/commit/1877f79a19d86ea3f19223289826461516842cf0))
+* **.npmrc:** remove excess whitespace ([ebcab05](https://github.com/Fdawgs/fastify-json-to-xml/commit/ebcab05748cee1c74132c458950fe5c9bcf559ea))
+* drop support for node 14, 16, and 18 ([1b00f02](https://github.com/Fdawgs/fastify-json-to-xml/commit/1b00f021d1c9bafe39e783de58d0f9a57aa11ec1))
+* **package:** change author email ([1bbb7a3](https://github.com/Fdawgs/fastify-json-to-xml/commit/1bbb7a390b66596ae009b4e306c4d492804402f8))
+
 ## [1.1.12](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.11...v1.1.12) (2024-05-01)
 
 
