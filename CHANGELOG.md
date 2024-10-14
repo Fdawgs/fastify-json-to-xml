@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.0...v2.0.1) (2024-10-14)
+
+
+### Continuous integration
+
+* **cd:** migrate to manifest config ([2db6156](https://github.com/Fdawgs/fastify-json-to-xml/commit/2db61569cc8caf7495d6c5335a23b04f225819fd))
+
 ## [2.0.0](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.12...v2.0.0) (2024-10-02)
 
 
