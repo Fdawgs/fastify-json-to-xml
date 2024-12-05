@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.0.1](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.0...v2.0.1) (2024-12-05)
+
+
+### Continuous integration
+
+* **cd:** migrate to manifest config ([2db6156](https://github.com/Fdawgs/fastify-json-to-xml/commit/2db61569cc8caf7495d6c5335a23b04f225819fd))
+* **ci:** use major tag for coverallsapp/github-action ([13295df](https://github.com/Fdawgs/fastify-json-to-xml/commit/13295dffb6aa82e6fb87cb982096edebe2a719ff))
+* **deps:** bump coverallsapp/github-action from 2.3.0 to 2.3.1 ([#110](https://github.com/Fdawgs/fastify-json-to-xml/issues/110)) ([a92b6ff](https://github.com/Fdawgs/fastify-json-to-xml/commit/a92b6ff501ff0a01e817c4e1098cae62344e9858))
+* **deps:** bump coverallsapp/github-action from 2.3.1 to 2.3.4 ([#112](https://github.com/Fdawgs/fastify-json-to-xml/issues/112)) ([1c94a55](https://github.com/Fdawgs/fastify-json-to-xml/commit/1c94a55c154d24f09d738faacb15498e6929819b))
+
+
+### Documentation
+
+* **readme:** rename ci badge to reflect workflow ([ae55b01](https://github.com/Fdawgs/fastify-json-to-xml/commit/ae55b015ad5b77c4ab9dd8359033c96ce39635b6))
+
 ## [2.0.0](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.12...v2.0.0) (2024-10-02)
 
 
