@@ -12,8 +12,8 @@
 
 The `fastify-json-to-xml` plugin adds an `onSend` hook that supports serialising 'application/json' responses into XML if:
 
--   The `Accept` HTTP request header only includes 'application/xml'
--   The `Accept` HTTP request header explicitly includes the 'application/xml' media type before 'application/json'
+- The `Accept` HTTP request header only includes 'application/xml'
+- The `Accept` HTTP request header explicitly includes the 'application/xml' media type before 'application/json'
 
 ## Installation
 
@@ -76,7 +76,7 @@ Please adhere to this project's [Code of Conduct](https://github.com/Fdawgs/.git
 
 ## Acknowledgements
 
--   [**Aras Abbasi**](https://github.com/uzlopak) - TypeScript support
+- [**Aras Abbasi**](https://github.com/uzlopak) - TypeScript support
 
 ## License
 
