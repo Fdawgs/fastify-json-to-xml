@@ -1,6 +1,6 @@
 {
 	"name": "fastify-json-to-xml",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Fastify plugin to serialise JSON responses into XML",
 	"keywords": [
 		"fastify",
