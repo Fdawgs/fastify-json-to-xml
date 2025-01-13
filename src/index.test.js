@@ -1,5 +1,6 @@
 "use strict";
 
+const { after, before, describe, it } = require("node:test");
 const Fastify = require("fastify");
 const plugin = require(".");
 
@@ -12,7 +13,7 @@ describe("JSON-To-XML plugin", () => {
 		"$test-key": "test-value",
 	};
 
-	beforeAll(async () => {
+	before(async () => {
 		server = Fastify({ pluginTimeout: 0 });
 
 		server
@@ -36,7 +37,7 @@ describe("JSON-To-XML plugin", () => {
 		await server.ready();
 	});
 
-	afterAll(async () => server.close());
+	after(async () => server.close());
 
 	describe("JSON responses", () => {
 		const jsonTests = [
@@ -68,20 +69,24 @@ describe("JSON-To-XML plugin", () => {
 			},
 		];
 
-		/** @todo Use `it.concurrent.each()` once it is no longer experimental. */
-		it.each(jsonTests)("Returns $testName", async ({ headers }) => {
-			const response = await server.inject({
-				method: "GET",
-				url: "/no-replace",
-				headers,
-			});
+		for (const { testName, headers } of jsonTests) {
+			// eslint-disable-next-line no-loop-func -- false positive, server use is safe
+			it(`Returns ${testName}`, async (t) => {
+				const response = await server.inject({
+					method: "GET",
+					url: "/no-replace",
+					headers,
+				});
 
-			expect(JSON.parse(response.body)).toStrictEqual(resBody);
-			expect(response.headers["content-type"]).toBe(
-				"application/json; charset=utf-8"
-			);
-			expect(response.statusCode).toBe(200);
-		});
+				t.plan(3);
+				t.assert.deepStrictEqual(JSON.parse(response.body), resBody);
+				t.assert.strictEqual(
+					response.headers["content-type"],
+					"application/json; charset=utf-8"
+				);
+				t.assert.strictEqual(response.statusCode, 200);
+			});
+		}
 	});
 
 	describe("XML responses", () => {
@@ -101,38 +106,48 @@ describe("JSON-To-XML plugin", () => {
 				},
 			},
 		];
-		describe.each(xmlTests)("$testName", ({ headers }) => {
-			it("Returns HTTP status code 500 due to invalid XML characters", async () => {
-				const response = await server.inject({
-					method: "GET",
-					url: "/no-replace",
-					headers,
+
+		for (const { testName, headers } of xmlTests) {
+			// eslint-disable-next-line no-loop-func -- false positive, server use is safe
+			describe(testName, () => {
+				it("Returns HTTP status code 500 due to invalid XML characters", async (t) => {
+					const response = await server.inject({
+						method: "GET",
+						url: "/no-replace",
+						headers,
+					});
+
+					t.plan(3);
+					t.assert.strictEqual(
+						response.body,
+						'<?xml version="1.0" encoding="UTF-8"?><response><statusCode>500</statusCode><error>Internal Server Error</error><message>in XML document > element "response": element name "$test-key" should not contain characters not allowed in XML names</message></response>'
+					);
+					t.assert.strictEqual(
+						response.headers["content-type"],
+						"application/xml; charset=utf-8"
+					);
+					t.assert.strictEqual(response.statusCode, 500);
 				});
 
-				expect(response.body).toBe(
-					'<?xml version="1.0" encoding="UTF-8"?><response><statusCode>500</statusCode><error>Internal Server Error</error><message>in XML document > element "response": element name "$test-key" should not contain characters not allowed in XML names</message></response>'
-				);
-				expect(response.headers["content-type"]).toBe(
-					"application/xml; charset=utf-8"
-				);
-				expect(response.statusCode).toBe(500);
-			});
+				it("Returns XML body with invalid XML characters replaced", async (t) => {
+					const response = await server.inject({
+						method: "GET",
+						url: "/replace",
+						headers,
+					});
 
-			it("Returns XML body with invalid XML characters replaced", async () => {
-				const response = await server.inject({
-					method: "GET",
-					url: "/replace",
-					headers,
+					t.plan(3);
+					t.assert.strictEqual(
+						response.body,
+						'<?xml version="1.0" encoding="UTF-8"?><response><test-key>test-value</test-key><�test-key>test-value</�test-key></response>'
+					);
+					t.assert.strictEqual(
+						response.headers["content-type"],
+						"application/xml; charset=utf-8"
+					);
+					t.assert.strictEqual(response.statusCode, 200);
 				});
-
-				expect(response.body).toBe(
-					'<?xml version="1.0" encoding="UTF-8"?><response><test-key>test-value</test-key><�test-key>test-value</�test-key></response>'
-				);
-				expect(response.headers["content-type"]).toBe(
-					"application/xml; charset=utf-8"
-				);
-				expect(response.statusCode).toBe(200);
 			});
-		});
+		}
 	});
 });
