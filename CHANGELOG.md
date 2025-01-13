@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.0.1](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.0...v2.0.1) (2025-01-13)
+
+
+### Continuous integration
+
+* **cd:** migrate to manifest config ([2db6156](https://github.com/Fdawgs/fastify-json-to-xml/commit/2db61569cc8caf7495d6c5335a23b04f225819fd))
+* **ci:** use major tag for coverallsapp/github-action ([13295df](https://github.com/Fdawgs/fastify-json-to-xml/commit/13295dffb6aa82e6fb87cb982096edebe2a719ff))
+* **deps:** bump coverallsapp/github-action from 2.3.0 to 2.3.1 ([#110](https://github.com/Fdawgs/fastify-json-to-xml/issues/110)) ([a92b6ff](https://github.com/Fdawgs/fastify-json-to-xml/commit/a92b6ff501ff0a01e817c4e1098cae62344e9858))
+* **deps:** bump coverallsapp/github-action from 2.3.1 to 2.3.4 ([#112](https://github.com/Fdawgs/fastify-json-to-xml/issues/112)) ([1c94a55](https://github.com/Fdawgs/fastify-json-to-xml/commit/1c94a55c154d24f09d738faacb15498e6929819b))
+* **release-please:** declare schema ([26835f1](https://github.com/Fdawgs/fastify-json-to-xml/commit/26835f16a879b27d00fdd2e28544270f108d813f))
+
+
+### Dependencies
+
+* **deps-dev:** bump dev dependencies ([44a6121](https://github.com/Fdawgs/fastify-json-to-xml/commit/44a6121d610170c91190c91e144437a3bb989c9e))
+* **deps:** bump secure-json-parse ([#119](https://github.com/Fdawgs/fastify-json-to-xml/issues/119)) ([eef0ca5](https://github.com/Fdawgs/fastify-json-to-xml/commit/eef0ca50e0fa1b013512bc8d9917b705a73b4b89))
+* migrate from jest to native node:test ([#120](https://github.com/Fdawgs/fastify-json-to-xml/issues/120)) ([468c5e3](https://github.com/Fdawgs/fastify-json-to-xml/commit/468c5e3dd9bbceb11bf2a97e27468c7e43813d51))
+
+
+### Documentation
+
+* **readme:** rename ci badge to reflect workflow ([ae55b01](https://github.com/Fdawgs/fastify-json-to-xml/commit/ae55b015ad5b77c4ab9dd8359033c96ce39635b6))
+
+
+### Miscellaneous
+
+* **jsconfig:** set schema ([e1a9878](https://github.com/Fdawgs/fastify-json-to-xml/commit/e1a9878855aaf3e53cd50229abee325e7782a05a))
+* **license:** update license year ([c6b6e8c](https://github.com/Fdawgs/fastify-json-to-xml/commit/c6b6e8c1e3af8aaba47fd5e72702eb32b36c87fa))
+
 ## [2.0.0](https://github.com/Fdawgs/fastify-json-to-xml/compare/v1.1.12...v2.0.0) (2024-10-02)
 
 
