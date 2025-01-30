@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.1...v2.0.2) (2025-01-30)
+
+
+### Miscellaneous
+
+* use impersonal language ([ea8f3dc](https://github.com/Fdawgs/fastify-json-to-xml/commit/ea8f3dc4c2493283dd6c5176a5c9264f22e32492))
+
 ## [2.0.1](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.0...v2.0.1) (2025-01-13)
 
 
