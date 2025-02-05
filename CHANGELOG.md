@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.0.2](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.1...v2.0.2) (2025-02-05)
+
+
+### Continuous integration
+
+* **automerge:** flush buffer to disk ([df7f363](https://github.com/Fdawgs/fastify-json-to-xml/commit/df7f3639cea6fb6e6221c84c4af4b1029daf83e0))
+
+
+### Dependencies
+
+* **deps-dev:** remove upath ([4e432aa](https://github.com/Fdawgs/fastify-json-to-xml/commit/4e432aa21aceb93df3ef773bee6c095c1cc35f86))
+
+
+### Miscellaneous
+
+* use impersonal language ([ea8f3dc](https://github.com/Fdawgs/fastify-json-to-xml/commit/ea8f3dc4c2493283dd6c5176a5c9264f22e32492))
+
 ## [2.0.1](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.0...v2.0.1) (2025-01-13)
 
 
