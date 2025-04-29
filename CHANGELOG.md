@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.0.2](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.1...v2.0.2) (2025-04-29)
+
+
+### Continuous integration
+
+* **.github:** pin actions to commit-hash; set permissions at job level ([1539fbb](https://github.com/Fdawgs/fastify-json-to-xml/commit/1539fbb94e1f15fdcb955f76d0c06c62e194d97f))
+* add top-level workflow permissions ([#128](https://github.com/Fdawgs/fastify-json-to-xml/issues/128)) ([4cf3239](https://github.com/Fdawgs/fastify-json-to-xml/commit/4cf32393d9a54efaf8429dbc62ba7122119e79ce))
+* **automerge:** flush buffer to disk ([df7f363](https://github.com/Fdawgs/fastify-json-to-xml/commit/df7f3639cea6fb6e6221c84c4af4b1029daf83e0))
+* **codeql:** analyse github actions ([b06d42b](https://github.com/Fdawgs/fastify-json-to-xml/commit/b06d42b8bbbea6a23dfbfd5d68aa30ef5ad063c7))
+* **deps:** bump github/codeql-action from 3.28.12 to 3.28.13 ([#129](https://github.com/Fdawgs/fastify-json-to-xml/issues/129)) ([d1f5146](https://github.com/Fdawgs/fastify-json-to-xml/commit/d1f5146e235338ecddc7b9421055be2a77fda544))
+* use latest node lts version for unit tests ([#131](https://github.com/Fdawgs/fastify-json-to-xml/issues/131)) ([9eaa4ee](https://github.com/Fdawgs/fastify-json-to-xml/commit/9eaa4eecd77a74fe4f617f32b1b567118528c607))
+
+
+### Dependencies
+
+* **deps-dev:** remove upath ([4e432aa](https://github.com/Fdawgs/fastify-json-to-xml/commit/4e432aa21aceb93df3ef773bee6c095c1cc35f86))
+* **deps:** bump secure-json-parse in the fastify-core group ([#130](https://github.com/Fdawgs/fastify-json-to-xml/issues/130)) ([2d90253](https://github.com/Fdawgs/fastify-json-to-xml/commit/2d902536aaa8a37a8c3d1054340509b6fe0c8dfe))
+
+
+### Miscellaneous
+
+* use impersonal language ([ea8f3dc](https://github.com/Fdawgs/fastify-json-to-xml/commit/ea8f3dc4c2493283dd6c5176a5c9264f22e32492))
+
 ## [2.0.1](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.0...v2.0.1) (2025-01-13)
 
 
