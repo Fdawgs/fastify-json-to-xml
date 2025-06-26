@@ -34,13 +34,13 @@ async function fastifyJsonToXml(server, options) {
 
 	server.addHook("onSend", async (req, res, payload) => {
 		if (
+			typeof payload === "string" &&
 			res
 				.getHeader("content-type")
 				?.toString()
 				.toLowerCase()
 				.includes("application/json") &&
-			accepts(req.raw).type(ACCEPTED_TYPES) === "application/xml" &&
-			typeof payload === "string"
+			accepts(req.raw).type(ACCEPTED_TYPES) === "application/xml"
 		) {
 			res.type("application/xml; charset=utf-8");
 			return xmlParse("response", secureParse(payload), xmlParseOptions);
