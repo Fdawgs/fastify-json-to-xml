@@ -5,6 +5,8 @@ const accepts = require("accepts");
 const { parse: xmlParse } = require("js2xmlparser");
 const { parse: secureParse } = require("secure-json-parse");
 
+const ACCEPTED_TYPES = ["application/json", "application/xml"];
+
 /**
  * @author Frazer Smith
  * @description On-send plugin that adds support for serialising 'application/json'
@@ -37,8 +39,7 @@ async function fastifyJsonToXml(server, options) {
 				?.toString()
 				.toLowerCase()
 				.includes("application/json") &&
-			accepts(req.raw).type(["application/json", "application/xml"]) ===
-				"application/xml" &&
+			accepts(req.raw).type(ACCEPTED_TYPES) === "application/xml" &&
 			typeof payload === "string"
 		) {
 			res.type("application/xml; charset=utf-8");
