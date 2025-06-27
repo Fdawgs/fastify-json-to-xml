@@ -32,7 +32,7 @@ async function fastifyJsonToXml(server, options) {
 		replaceInvalidChars: options?.replaceInvalidChars === true,
 	};
 
-	server.addHook("onSend", async (req, res, payload) => {
+	server.addHook("onSend", async function jsonToXml(req, res, payload) {
 		if (
 			typeof payload === "string" &&
 			res
