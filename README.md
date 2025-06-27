@@ -23,7 +23,16 @@ Install using `npm`:
 npm i fastify-json-to-xml
 ```
 
-For Fastify v4.x support, use `fastify-json-to-xml@1.1.12`.
+### Compatibility
+
+| Plugin version | Fastify version |
+| -------------- | --------------- |
+| `>=2.x`        | `^5.x`          |
+| `>=1.x <2.x`   | `^4.x`          |
+
+Please note that if a Fastify version is out of support, then so are the corresponding versions of this plugin
+in the table above.
+See [Fastify's LTS policy](https://github.com/fastify/fastify/blob/main/docs/Reference/LTS.md) for more details.
 
 ## Example usage
 
