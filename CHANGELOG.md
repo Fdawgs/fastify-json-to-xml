@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.3](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.2...v2.0.3) (2025-07-22)
+
+
+### Continuous integration
+
+* **cd:** only scope package if it is not already ([#151](https://github.com/Fdawgs/fastify-json-to-xml/issues/151)) ([f2ee6d0](https://github.com/Fdawgs/fastify-json-to-xml/commit/f2ee6d00ead1477b15e6ef157e7259206980b797))
+* **dependabot:** add eslint config to eslint group ([#149](https://github.com/Fdawgs/fastify-json-to-xml/issues/149)) ([877a3eb](https://github.com/Fdawgs/fastify-json-to-xml/commit/877a3eb41345742f583917f021c51c8ad5444efd))
+
 ## [2.0.2](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.1...v2.0.2) (2025-06-27)
 
 
