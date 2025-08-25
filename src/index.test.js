@@ -5,6 +5,8 @@ const { after, before, describe, it } = require("node:test");
 const Fastify = require("fastify");
 const plugin = require(".");
 
+/** @typedef {import('node:test').TestContext} TestContext */
+
 describe("JSON-To-XML plugin", () => {
 	/** @type {Fastify.FastifyInstance} */
 	let server;
@@ -73,7 +75,7 @@ describe("JSON-To-XML plugin", () => {
 
 		for (let i = 0; i < jsonTestsLength; i += 1) {
 			const { testName, headers } = jsonTests[i];
-			it(`Returns ${testName}`, async (t) => {
+			it(`Returns ${testName}`, async (/** @type {TestContext} */ t) => {
 				const response = await server.inject({
 					method: "GET",
 					url: "/no-replace",
@@ -113,7 +115,7 @@ describe("JSON-To-XML plugin", () => {
 		for (let i = 0; i < xmlTestsLength; i += 1) {
 			const { testName, headers } = xmlTests[i];
 			describe(testName, () => {
-				it("Returns HTTP status code 500 due to invalid XML characters", async (t) => {
+				it("Returns HTTP status code 500 due to invalid XML characters", async (/** @type {TestContext} */ t) => {
 					const response = await server.inject({
 						method: "GET",
 						url: "/no-replace",
@@ -132,7 +134,7 @@ describe("JSON-To-XML plugin", () => {
 					t.assert.strictEqual(response.statusCode, 500);
 				});
 
-				it("Returns XML body with invalid XML characters replaced", async (t) => {
+				it("Returns XML body with invalid XML characters replaced", async (/** @type {TestContext} */ t) => {
 					const response = await server.inject({
 						method: "GET",
 						url: "/replace",
