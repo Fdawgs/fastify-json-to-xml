@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.0.3](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.2...v2.0.3) (2025-09-16)
+
+
+### Continuous integration
+
+* **cd:** only scope package if it is not already ([#151](https://github.com/Fdawgs/fastify-json-to-xml/issues/151)) ([f2ee6d0](https://github.com/Fdawgs/fastify-json-to-xml/commit/f2ee6d00ead1477b15e6ef157e7259206980b797))
+* **cd:** use oicd for publishing to npm ([#154](https://github.com/Fdawgs/fastify-json-to-xml/issues/154)) ([0d2818e](https://github.com/Fdawgs/fastify-json-to-xml/commit/0d2818ef1cd7e73e2f3060fe2b7c37afccdc7179))
+* **dependabot:** add eslint config to eslint group ([#149](https://github.com/Fdawgs/fastify-json-to-xml/issues/149)) ([877a3eb](https://github.com/Fdawgs/fastify-json-to-xml/commit/877a3eb41345742f583917f021c51c8ad5444efd))
+* **deps:** bump actions/checkout from 4 to 5 ([#157](https://github.com/Fdawgs/fastify-json-to-xml/issues/157)) ([b866f7c](https://github.com/Fdawgs/fastify-json-to-xml/commit/b866f7c8f64c3ae28585cce9cc80215b6efdf1fc))
+* **deps:** bump actions/dependency-review-action from 4.7.1 to 4.7.3 ([#156](https://github.com/Fdawgs/fastify-json-to-xml/issues/156)) ([812b0fe](https://github.com/Fdawgs/fastify-json-to-xml/commit/812b0fe83ce3e9b8772e1e1cba22bd7ca57321c0))
+* **deps:** bump googleapis/release-please-action from 4.2.0 to 4.3.0 ([#158](https://github.com/Fdawgs/fastify-json-to-xml/issues/158)) ([8c0e486](https://github.com/Fdawgs/fastify-json-to-xml/commit/8c0e4869a1a1553cc31aa0b90067baae2141fe9f))
+* **link-check:** retry on 429 response ([#153](https://github.com/Fdawgs/fastify-json-to-xml/issues/153)) ([ad7a5d8](https://github.com/Fdawgs/fastify-json-to-xml/commit/ad7a5d8ae7394b9b15c6e0de5830d7decd874ef2))
+
+
+### Dependencies
+
+* **dependabot:** add cooldowns ([#160](https://github.com/Fdawgs/fastify-json-to-xml/issues/160)) ([608867b](https://github.com/Fdawgs/fastify-json-to-xml/commit/608867b88d47079ab1ec0ab3f481ce02439a7e26))
+
+
+### Miscellaneous
+
+* add `.nvmrc` file ([#159](https://github.com/Fdawgs/fastify-json-to-xml/issues/159)) ([af6a4fc](https://github.com/Fdawgs/fastify-json-to-xml/commit/af6a4fc1f245a8d9caee2334412f44c739d21978))
+
+
+### Tests
+
+* **index:** add testcontext jsdoc to satisfy ts2775 on assertions ([#155](https://github.com/Fdawgs/fastify-json-to-xml/issues/155)) ([e905899](https://github.com/Fdawgs/fastify-json-to-xml/commit/e9058990035c7e1cf5874f551feeef2570029bc2))
+
 ## [2.0.2](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.1...v2.0.2) (2025-06-27)
 
 
