@@ -1,5 +1,54 @@
 # Changelog
 
+## [3.0.0](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.2...v3.0.0) (2025-10-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* **index:** switch to callback style to remove Promise overhead ([#172](https://github.com/Fdawgs/fastify-json-to-xml/issues/172))
+
+### Continuous integration
+
+* **cd:** only scope package if it is not already ([#151](https://github.com/Fdawgs/fastify-json-to-xml/issues/151)) ([f2ee6d0](https://github.com/Fdawgs/fastify-json-to-xml/commit/f2ee6d00ead1477b15e6ef157e7259206980b797))
+* **cd:** protect against cache poisoning ([#166](https://github.com/Fdawgs/fastify-json-to-xml/issues/166)) ([e3e2546](https://github.com/Fdawgs/fastify-json-to-xml/commit/e3e254618adf0a0db6ebb9a1f7ee821d54e002d2))
+* **cd:** use oicd for publishing to npm ([#154](https://github.com/Fdawgs/fastify-json-to-xml/issues/154)) ([0d2818e](https://github.com/Fdawgs/fastify-json-to-xml/commit/0d2818ef1cd7e73e2f3060fe2b7c37afccdc7179))
+* **ci:** add typecheck to lint job ([#167](https://github.com/Fdawgs/fastify-json-to-xml/issues/167)) ([23ebb9c](https://github.com/Fdawgs/fastify-json-to-xml/commit/23ebb9cccc53571bd3ddb98f43ab6afc8ee07005))
+* **ci:** check dependabot prs originate from repo ([#164](https://github.com/Fdawgs/fastify-json-to-xml/issues/164)) ([d62c441](https://github.com/Fdawgs/fastify-json-to-xml/commit/d62c441c8c2b630ad23551b1e7271f98346b92df))
+* **ci:** ignore dependabot prs in coverage updates ([#171](https://github.com/Fdawgs/fastify-json-to-xml/issues/171)) ([02ab448](https://github.com/Fdawgs/fastify-json-to-xml/commit/02ab448400848fbcee3e5fee13e95e8ada923ae9))
+* **dependabot:** add eslint config to eslint group ([#149](https://github.com/Fdawgs/fastify-json-to-xml/issues/149)) ([877a3eb](https://github.com/Fdawgs/fastify-json-to-xml/commit/877a3eb41345742f583917f021c51c8ad5444efd))
+* **deps:** bump actions/checkout from 4 to 5 ([#157](https://github.com/Fdawgs/fastify-json-to-xml/issues/157)) ([b866f7c](https://github.com/Fdawgs/fastify-json-to-xml/commit/b866f7c8f64c3ae28585cce9cc80215b6efdf1fc))
+* **deps:** bump actions/dependency-review-action from 4.7.1 to 4.7.3 ([#156](https://github.com/Fdawgs/fastify-json-to-xml/issues/156)) ([812b0fe](https://github.com/Fdawgs/fastify-json-to-xml/commit/812b0fe83ce3e9b8772e1e1cba22bd7ca57321c0))
+* **deps:** bump actions/dependency-review-action from 4.7.3 to 4.8.0 ([#168](https://github.com/Fdawgs/fastify-json-to-xml/issues/168)) ([f7ecacf](https://github.com/Fdawgs/fastify-json-to-xml/commit/f7ecacf638dd8bee9e8c7d45effabf3d6d6478db))
+* **deps:** bump actions/setup-node from 4 to 5 ([#161](https://github.com/Fdawgs/fastify-json-to-xml/issues/161)) ([6a7ca9f](https://github.com/Fdawgs/fastify-json-to-xml/commit/6a7ca9fc2b45044f6f01eb78eb50e80134ed7425))
+* **deps:** bump googleapis/release-please-action from 4.2.0 to 4.3.0 ([#158](https://github.com/Fdawgs/fastify-json-to-xml/issues/158)) ([8c0e486](https://github.com/Fdawgs/fastify-json-to-xml/commit/8c0e4869a1a1553cc31aa0b90067baae2141fe9f))
+* **link-check:** retry on 429 response ([#153](https://github.com/Fdawgs/fastify-json-to-xml/issues/153)) ([ad7a5d8](https://github.com/Fdawgs/fastify-json-to-xml/commit/ad7a5d8ae7394b9b15c6e0de5830d7decd874ef2))
+* tidy conditional checks ([#165](https://github.com/Fdawgs/fastify-json-to-xml/issues/165)) ([17b5d6a](https://github.com/Fdawgs/fastify-json-to-xml/commit/17b5d6a78e5ef08ad39536ebc66839cb15568144))
+* use `.nvmrc` for node-version ([#170](https://github.com/Fdawgs/fastify-json-to-xml/issues/170)) ([38590d4](https://github.com/Fdawgs/fastify-json-to-xml/commit/38590d4a55d944c043e983af312b86039ddfac7a))
+
+
+### Dependencies
+
+* **dependabot:** add cooldowns ([#160](https://github.com/Fdawgs/fastify-json-to-xml/issues/160)) ([608867b](https://github.com/Fdawgs/fastify-json-to-xml/commit/608867b88d47079ab1ec0ab3f481ce02439a7e26))
+* **deps-dev:** bump the commitlint group with 2 updates ([#169](https://github.com/Fdawgs/fastify-json-to-xml/issues/169)) ([7583a29](https://github.com/Fdawgs/fastify-json-to-xml/commit/7583a297f5dccd7492ade8a94860a4eeec33d1b1))
+* **deps:** bump dependencies ([#173](https://github.com/Fdawgs/fastify-json-to-xml/issues/173)) ([a7555c6](https://github.com/Fdawgs/fastify-json-to-xml/commit/a7555c66a29ae1f5d4fe457d8650cdd8541d5003))
+
+
+### Improvements
+
+* **index:** switch to callback style to remove Promise overhead ([#172](https://github.com/Fdawgs/fastify-json-to-xml/issues/172)) ([5d3bb88](https://github.com/Fdawgs/fastify-json-to-xml/commit/5d3bb8887d5458abaaffed595829b9adf1f2a424))
+
+
+### Miscellaneous
+
+* **.devcontainer:** add devcontainer ([#162](https://github.com/Fdawgs/fastify-json-to-xml/issues/162)) ([d937b31](https://github.com/Fdawgs/fastify-json-to-xml/commit/d937b31bc8648a4c9db31356140a0bfe679049aa))
+* **.npmrc:** ignore scripts ([#163](https://github.com/Fdawgs/fastify-json-to-xml/issues/163)) ([a395f36](https://github.com/Fdawgs/fastify-json-to-xml/commit/a395f3658d710817b0a370d7aaf71313f68b66ac))
+* add `.nvmrc` file ([#159](https://github.com/Fdawgs/fastify-json-to-xml/issues/159)) ([af6a4fc](https://github.com/Fdawgs/fastify-json-to-xml/commit/af6a4fc1f245a8d9caee2334412f44c739d21978))
+
+
+### Tests
+
+* **index:** add testcontext jsdoc to satisfy ts2775 on assertions ([#155](https://github.com/Fdawgs/fastify-json-to-xml/issues/155)) ([e905899](https://github.com/Fdawgs/fastify-json-to-xml/commit/e9058990035c7e1cf5874f551feeef2570029bc2))
+
 ## [2.0.2](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.1...v2.0.2) (2025-06-27)
 
 
