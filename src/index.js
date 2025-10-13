@@ -8,18 +8,20 @@ const { parse: secureParse } = require("secure-json-parse");
 const ACCEPTED_TYPES = ["application/json", "application/xml"];
 
 /**
+ * @typedef {object} FastifyJsonToXmlOptions
+ * @property {boolean} [replaceInvalidChars] - Replace invalid XML characters with the Unicode
+ * replacement character (U+FFFD). Defaults to false.
+ */
+
+/**
  * @author Frazer Smith
  * @description On-send plugin that adds support for serialising 'application/json'
  * responses into XML if the `Accept` HTTP request header only includes
  * 'application/xml'  or if it explicitly includes the 'application/xml'
  * media type before 'application/json'.
- * @param {import("fastify").FastifyInstance} server - Fastify instance.
- * @param {object} [options] - Plugin config values.
- * @param {boolean} [options.replaceInvalidChars] - Replace invalid XML characters with the Unicode
- * replacement character, U+FFFD. Will throw error if invalid characters found when enabled.
- * Disabled by default.
+ * @type {import("fastify").FastifyPluginCallback<FastifyJsonToXmlOptions>}
  */
-async function fastifyJsonToXml(server, options) {
+function fastifyJsonToXml(server, options, done) {
 	const xmlParseOptions = {
 		declaration: {
 			encoding: "UTF-8",
@@ -32,22 +34,31 @@ async function fastifyJsonToXml(server, options) {
 		replaceInvalidChars: options?.replaceInvalidChars === true,
 	};
 
-	server.addHook("onSend", async function jsonToXml(req, res, payload) {
-		if (
-			typeof payload === "string" &&
-			res
-				.getHeader("content-type")
-				?.toString()
-				.toLowerCase()
-				.includes("application/json") &&
-			accepts(req.raw).type(ACCEPTED_TYPES) === "application/xml"
-		) {
-			res.type("application/xml; charset=utf-8");
-			return xmlParse("response", secureParse(payload), xmlParseOptions);
-		}
+	server.addHook(
+		"onSend",
+		/** @type {import("fastify").onSendAsyncHookHandler} */
+		async function jsonToXml(req, res, payload) {
+			if (
+				typeof payload === "string" &&
+				res
+					.getHeader("content-type")
+					?.toString()
+					.toLowerCase()
+					.includes("application/json") &&
+				accepts(req.raw).type(ACCEPTED_TYPES) === "application/xml"
+			) {
+				res.type("application/xml; charset=utf-8");
+				return xmlParse(
+					"response",
+					secureParse(payload),
+					xmlParseOptions
+				);
+			}
 
-		return payload;
-	});
+			return payload;
+		}
+	);
+	done();
 }
 
 module.exports = fp(fastifyJsonToXml, {
