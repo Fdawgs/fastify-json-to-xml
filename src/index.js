@@ -36,7 +36,6 @@ function fastifyJsonToXml(server, options, done) {
 
 	server.addHook(
 		"preSerialization",
-		/** @type {import("fastify").preSerializationHookHandler} */
 		async function jsonToXml(req, res, payload) {
 			if (
 				typeof payload === "object" &&
@@ -66,21 +65,16 @@ function fastifyJsonToXml(server, options, done) {
 		}
 	);
 
-	server.addHook(
-		"onError",
-		/** @type {import("fastify").onErrorHookHandler} */
-		async function errorToXml(req, res) {
-			if (accepts(req.raw).type(ACCEPTED_TYPES) === "application/xml") {
-				// Set content-type early so preSerialization can pick it up
-				res.type("application/xml; charset=utf-8");
-			}
+	server.addHook("onError", async function errorToXml(req, res) {
+		if (accepts(req.raw).type(ACCEPTED_TYPES) === "application/xml") {
+			// Set content-type early so preSerialization can pick it up
+			res.type("application/xml; charset=utf-8");
 		}
-	);
+	});
 
 	// Add onSend hook to handle error responses that were already JSON-serialized
 	server.addHook(
 		"onSend",
-		/** @type {import("fastify").onSendHookHandler} */
 		async function errorResponseToXml(req, res, payload) {
 			// Handle JSON-serialized error responses that need to be converted to XML
 			// This catches error responses that were serialized before we could convert them
