@@ -10,7 +10,7 @@
 
 ## Overview
 
-The `fastify-json-to-xml` plugin adds an `onSend` hook that supports serialising 'application/json' responses into XML if:
+The `fastify-json-to-xml` plugin adds a `preSerialization` hook that supports serialising 'application/json' responses into XML if:
 
 - The `Accept` HTTP request header only includes 'application/xml'
 - The `Accept` HTTP request header explicitly includes the 'application/xml' media type before 'application/json'
