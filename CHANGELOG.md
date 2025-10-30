@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/Fdawgs/fastify-json-to-xml/compare/v3.0.0...v3.0.1) (2025-10-30)
+
+
+### Miscellaneous
+
+* rename lint scripts to reflect use ([#176](https://github.com/Fdawgs/fastify-json-to-xml/issues/176)) ([15efc9c](https://github.com/Fdawgs/fastify-json-to-xml/commit/15efc9c4cb65bd0a8ca09bfdc9ed28a99bec835b))
+
 ## [3.0.0](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.2...v3.0.0) (2025-10-13)
 
 
