@@ -1,5 +1,29 @@
 # Changelog
 
+## [3.0.1](https://github.com/Fdawgs/fastify-json-to-xml/compare/v3.0.0...v3.0.1) (2025-11-15)
+
+
+### Continuous integration
+
+* add lock-threads workflow; fix concurrency groups ([#189](https://github.com/Fdawgs/fastify-json-to-xml/issues/189)) ([7229a66](https://github.com/Fdawgs/fastify-json-to-xml/commit/7229a66609d5c3f75f3f4aa96bc920a138a4518e))
+* **ci:** only send coverage to coveralls on main ([#185](https://github.com/Fdawgs/fastify-json-to-xml/issues/185)) ([4fd852d](https://github.com/Fdawgs/fastify-json-to-xml/commit/4fd852d35fff13a5cb041ea45169ee398e5139f9))
+* **deps:** bump actions/dependency-review-action from 4.8.0 to 4.8.1 ([#178](https://github.com/Fdawgs/fastify-json-to-xml/issues/178)) ([3170f4b](https://github.com/Fdawgs/fastify-json-to-xml/commit/3170f4bcc339dc255940b765fa5723ff46f19fd2))
+* **deps:** bump actions/setup-node from 5 to 6 ([#181](https://github.com/Fdawgs/fastify-json-to-xml/issues/181)) ([524bc99](https://github.com/Fdawgs/fastify-json-to-xml/commit/524bc99a77dee6c10715a4a7aebf7e3012b4469d))
+* **deps:** bump fastify/github-action-merge-dependabot ([#180](https://github.com/Fdawgs/fastify-json-to-xml/issues/180)) ([41fa943](https://github.com/Fdawgs/fastify-json-to-xml/commit/41fa9435d650c1907b747239b8789370ddb308a9))
+* **deps:** bump github/codeql-action from 3 to 4 ([#183](https://github.com/Fdawgs/fastify-json-to-xml/issues/183)) ([1cab63c](https://github.com/Fdawgs/fastify-json-to-xml/commit/1cab63ccaf61309f60801c05dcd3dc36a11769c8))
+* **deps:** bump googleapis/release-please-action from 4.3.0 to 4.4.0 ([#182](https://github.com/Fdawgs/fastify-json-to-xml/issues/182)) ([e35c164](https://github.com/Fdawgs/fastify-json-to-xml/commit/e35c16415005a532fc5a1c7457d99a3fd68b6e6b))
+* **deps:** bump JustinBeckwith/linkinator-action from 1.11.0 to 2.3 ([#179](https://github.com/Fdawgs/fastify-json-to-xml/issues/179)) ([c879fb8](https://github.com/Fdawgs/fastify-json-to-xml/commit/c879fb813a688dbbed388dbc4691e3da6c90bd39))
+* **link-check:** use reusable workflow ([#191](https://github.com/Fdawgs/fastify-json-to-xml/issues/191)) ([901c823](https://github.com/Fdawgs/fastify-json-to-xml/commit/901c8237163f0eb43a5039b003155aee185eb3ed))
+* **lock-threads:** set cron to every day ([#190](https://github.com/Fdawgs/fastify-json-to-xml/issues/190)) ([65328e3](https://github.com/Fdawgs/fastify-json-to-xml/commit/65328e3d374335336106cb389c19b7a9f7540a5c))
+
+
+### Miscellaneous
+
+* **.editorconfig:** add file to enforce consistent coding styles ([#186](https://github.com/Fdawgs/fastify-json-to-xml/issues/186)) ([49265af](https://github.com/Fdawgs/fastify-json-to-xml/commit/49265af6b8c170b4a28f8480ab766b0755977f04))
+* **.editorconfig:** use spaces for yml file indentation ([#188](https://github.com/Fdawgs/fastify-json-to-xml/issues/188)) ([9b74271](https://github.com/Fdawgs/fastify-json-to-xml/commit/9b74271388eaacf999ce666c09226e7182cf72df))
+* **eslint.config:** stop applying to jsx files ([#187](https://github.com/Fdawgs/fastify-json-to-xml/issues/187)) ([a39a9dd](https://github.com/Fdawgs/fastify-json-to-xml/commit/a39a9dde062600d99fb2b43e8361b0b0a07b6ecc))
+* rename lint scripts to reflect use ([#176](https://github.com/Fdawgs/fastify-json-to-xml/issues/176)) ([15efc9c](https://github.com/Fdawgs/fastify-json-to-xml/commit/15efc9c4cb65bd0a8ca09bfdc9ed28a99bec835b))
+
 ## [3.0.0](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.2...v3.0.0) (2025-10-13)
 
 
