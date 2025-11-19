@@ -3,7 +3,7 @@
 // eslint-disable-next-line n/no-unsupported-features/node-builtins -- Tests, not in distributed code
 const { after, before, describe, it } = require("node:test");
 const Fastify = require("fastify");
-const plugin = require(".");
+const plugin = require("../src");
 
 /** @typedef {import('node:test').TestContext} TestContext */
 
