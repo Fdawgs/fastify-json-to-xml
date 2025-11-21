@@ -75,6 +75,7 @@ describe("JSON-To-XML plugin", () => {
 
 		for (let i = 0; i < jsonTestsLength; i += 1) {
 			const { testName, headers } = jsonTests[i];
+			// eslint-disable-next-line no-loop-func -- server never reassigned
 			it(`Returns ${testName}`, async (/** @type {TestContext} */ t) => {
 				const response = await server.inject({
 					method: "GET",
@@ -114,6 +115,7 @@ describe("JSON-To-XML plugin", () => {
 
 		for (let i = 0; i < xmlTestsLength; i += 1) {
 			const { testName, headers } = xmlTests[i];
+			// eslint-disable-next-line no-loop-func -- server never reassigned
 			describe(testName, () => {
 				it("Returns HTTP status code 500 due to invalid XML characters", async (/** @type {TestContext} */ t) => {
 					const response = await server.inject({
