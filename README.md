@@ -19,7 +19,7 @@ The `fastify-json-to-xml` plugin adds an `onSend` hook that supports serialising
 
 Install using `npm`:
 
-```bash
+```sh
 npm i fastify-json-to-xml
 ```
 
