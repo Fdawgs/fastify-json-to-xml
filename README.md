@@ -73,7 +73,7 @@ For example:
 Will become:
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?><response><�test-key>test-value</�test-key></response>'
+<?xml version="1.0" encoding="UTF-8"?><response><�test-key>test-value</�test-key></response>
 ```
 
 ## Contributing
