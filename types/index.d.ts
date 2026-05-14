@@ -5,7 +5,7 @@ type FastifyJsonToXml =
 
 declare namespace fastifyJsonToXml {
 	export interface FastifyJsonToXmlOptions {
-		/** Replace invalid XML characters with the Unicode replacement character (U+FFFD). Defaults to false. */
+		/** Replace invalid XML characters with the Unicode replacement character (U+FFFD). Defaults to `false`. */
 		replaceInvalidChars?: boolean;
 	}
 

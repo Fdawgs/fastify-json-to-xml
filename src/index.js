@@ -10,7 +10,7 @@ const ACCEPTED_TYPES = ["application/json", "application/xml"];
 /**
  * @typedef {object} FastifyJsonToXmlOptions
  * @property {boolean} [replaceInvalidChars] - Replace invalid XML characters with the Unicode
- * replacement character (U+FFFD). Defaults to false.
+ * replacement character (U+FFFD). Defaults to `false`.
  */
 
 /**
