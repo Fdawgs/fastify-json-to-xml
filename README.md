@@ -1,10 +1,10 @@
 # fastify-json-to-xml
 
-[![GitHub release](https://img.shields.io/github/release/Fdawgs/fastify-json-to-xml.svg)](https://github.com/Fdawgs/fastify-json-to-xml/releases/latest/)
-[![npm version](https://img.shields.io/npm/v/fastify-json-to-xml)](https://npmjs.com/package/fastify-json-to-xml)
+[![GitHub release](https://img.shields.io/github/v/release/Fdawgs/fastify-json-to-xml)](https://github.com/Fdawgs/fastify-json-to-xml/releases/latest)
+[![npm version](https://img.shields.io/npm/v/fastify-json-to-xml)](https://www.npmjs.com/package/fastify-json-to-xml)
 [![CI](https://github.com/Fdawgs/fastify-json-to-xml/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Fdawgs/fastify-json-to-xml/actions/workflows/ci.yml)
 [![Coverage status](https://coveralls.io/repos/github/Fdawgs/fastify-json-to-xml/badge.svg?branch=main)](https://coveralls.io/github/Fdawgs/fastify-json-to-xml?branch=main)
-[![code style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
+[![code style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4?style=flat)](https://github.com/prettier/prettier)
 [![OSSF Scorecard](https://api.scorecard.dev/projects/github.com/Fdawgs/fastify-json-to-xml/badge)](https://scorecard.dev/viewer/?uri=github.com/Fdawgs/fastify-json-to-xml)
 
 > Fastify plugin to serialise JSON responses into XML
