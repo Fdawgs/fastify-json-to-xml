@@ -38,6 +38,8 @@ See [Fastify's LTS policy](https://github.com/fastify/fastify/blob/main/docs/Ref
 ## Example usage
 
 ```js
+"use strict";
+
 const Fastify = require("fastify");
 const jsonToXml = require("fastify-json-to-xml");
 
