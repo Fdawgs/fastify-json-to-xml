@@ -1,5 +1,93 @@
 # Changelog
 
+## [3.0.1](https://github.com/Fdawgs/fastify-json-to-xml/compare/v3.0.0...v3.0.1) (2026-07-12)
+
+
+### Continuous integration
+
+* add lock-threads workflow; fix concurrency groups ([#189](https://github.com/Fdawgs/fastify-json-to-xml/issues/189)) ([7229a66](https://github.com/Fdawgs/fastify-json-to-xml/commit/7229a66609d5c3f75f3f4aa96bc920a138a4518e))
+* add ossf scorecard workflow ([#237](https://github.com/Fdawgs/fastify-json-to-xml/issues/237)) ([ad684e5](https://github.com/Fdawgs/fastify-json-to-xml/commit/ad684e551c669ef2e921125a69ce7dd798919583))
+* **cd:** make provenance publishing explicit ([#205](https://github.com/Fdawgs/fastify-json-to-xml/issues/205)) ([6981d99](https://github.com/Fdawgs/fastify-json-to-xml/commit/6981d9969697776d6b8875d0910c3867541203a9))
+* **cd:** pin installed npm version ([#252](https://github.com/Fdawgs/fastify-json-to-xml/issues/252)) ([bf07f07](https://github.com/Fdawgs/fastify-json-to-xml/commit/bf07f074cb33b907a5b7c28c4ad0204214905ac0))
+* **ci:** add node 26 to test matrix ([#223](https://github.com/Fdawgs/fastify-json-to-xml/issues/223)) ([feb8c91](https://github.com/Fdawgs/fastify-json-to-xml/commit/feb8c916cc0243bf503431e853b511c956ff8511))
+* **ci:** only send coverage to coveralls on main ([#185](https://github.com/Fdawgs/fastify-json-to-xml/issues/185)) ([4fd852d](https://github.com/Fdawgs/fastify-json-to-xml/commit/4fd852d35fff13a5cb041ea45169ee398e5139f9))
+* **ci:** use reusable code quality workflow ([#216](https://github.com/Fdawgs/fastify-json-to-xml/issues/216)) ([8d55238](https://github.com/Fdawgs/fastify-json-to-xml/commit/8d552383523f3771c4721370642b6416ec716333))
+* **codeql:** check cjs, mjs, and ts files ([#195](https://github.com/Fdawgs/fastify-json-to-xml/issues/195)) ([6b17a90](https://github.com/Fdawgs/fastify-json-to-xml/commit/6b17a90d4522aa833bd7a48d35157f61aca1b188))
+* **deps:** bump actions/checkout from 5 to 6 ([#200](https://github.com/Fdawgs/fastify-json-to-xml/issues/200)) ([711d2f4](https://github.com/Fdawgs/fastify-json-to-xml/commit/711d2f4e5eb6ee161a4f12fc904f71bae03de61f))
+* **deps:** bump actions/dependency-review-action from 4.8.0 to 4.8.1 ([#178](https://github.com/Fdawgs/fastify-json-to-xml/issues/178)) ([3170f4b](https://github.com/Fdawgs/fastify-json-to-xml/commit/3170f4bcc339dc255940b765fa5723ff46f19fd2))
+* **deps:** bump actions/dependency-review-action from 4.8.1 to 4.8.2 ([#199](https://github.com/Fdawgs/fastify-json-to-xml/issues/199)) ([3630d4f](https://github.com/Fdawgs/fastify-json-to-xml/commit/3630d4fa55a27a2bfdcd98fdbcce179de17201ae))
+* **deps:** bump actions/dependency-review-action from 4.8.2 to 4.8.3 ([#206](https://github.com/Fdawgs/fastify-json-to-xml/issues/206)) ([d749582](https://github.com/Fdawgs/fastify-json-to-xml/commit/d7495823cf076ac2ddc5bb8cd2c419da4ac2825f))
+* **deps:** bump actions/dependency-review-action from 4.8.3 to 4.9.0 ([#211](https://github.com/Fdawgs/fastify-json-to-xml/issues/211)) ([b64da7e](https://github.com/Fdawgs/fastify-json-to-xml/commit/b64da7e5f40d1e82299ac196bc21d732f1c933d9))
+* **deps:** bump actions/setup-node from 5 to 6 ([#181](https://github.com/Fdawgs/fastify-json-to-xml/issues/181)) ([524bc99](https://github.com/Fdawgs/fastify-json-to-xml/commit/524bc99a77dee6c10715a4a7aebf7e3012b4469d))
+* **deps:** bump coverallsapp/github-action from 2.3.6 to 2.3.7 ([#198](https://github.com/Fdawgs/fastify-json-to-xml/issues/198)) ([a9165eb](https://github.com/Fdawgs/fastify-json-to-xml/commit/a9165eb121c99d065e3203c4c0f39c4d8c763844))
+* **deps:** bump fastify/github-action-merge-dependabot ([#180](https://github.com/Fdawgs/fastify-json-to-xml/issues/180)) ([41fa943](https://github.com/Fdawgs/fastify-json-to-xml/commit/41fa9435d650c1907b747239b8789370ddb308a9))
+* **deps:** bump fastify/github-action-merge-dependabot ([#213](https://github.com/Fdawgs/fastify-json-to-xml/issues/213)) ([de6c663](https://github.com/Fdawgs/fastify-json-to-xml/commit/de6c6634fd46136d422a021634868957954a9434))
+* **deps:** bump fdawgs/workflows/.github/workflows/reusable-code-quality.yml ([#230](https://github.com/Fdawgs/fastify-json-to-xml/issues/230)) ([033ed34](https://github.com/Fdawgs/fastify-json-to-xml/commit/033ed3412b273daa40bdd22c5d1c311d7c2e9a74))
+* **deps:** bump fdawgs/workflows/.github/workflows/reusable-link-check.yml ([#231](https://github.com/Fdawgs/fastify-json-to-xml/issues/231)) ([0708aa7](https://github.com/Fdawgs/fastify-json-to-xml/commit/0708aa7244065df3a6dd3735ce59f9c601930bf9))
+* **deps:** bump fdawgs/workflows/.github/workflows/reusable-lock-threads.yml ([#229](https://github.com/Fdawgs/fastify-json-to-xml/issues/229)) ([67cc5cd](https://github.com/Fdawgs/fastify-json-to-xml/commit/67cc5cd2d5ad2ab10f63aaec221cc724d9a2a770))
+* **deps:** bump github/codeql-action from 3 to 4 ([#183](https://github.com/Fdawgs/fastify-json-to-xml/issues/183)) ([1cab63c](https://github.com/Fdawgs/fastify-json-to-xml/commit/1cab63ccaf61309f60801c05dcd3dc36a11769c8))
+* **deps:** bump github/codeql-action in the github-owned group ([#228](https://github.com/Fdawgs/fastify-json-to-xml/issues/228)) ([d560350](https://github.com/Fdawgs/fastify-json-to-xml/commit/d56035022a0f611921ccad150a96922287a5e050))
+* **deps:** bump googleapis/release-please-action from 4.3.0 to 4.4.0 ([#182](https://github.com/Fdawgs/fastify-json-to-xml/issues/182)) ([e35c164](https://github.com/Fdawgs/fastify-json-to-xml/commit/e35c16415005a532fc5a1c7457d99a3fd68b6e6b))
+* **deps:** bump googleapis/release-please-action from 4.4.0 to 5.0.0 ([#214](https://github.com/Fdawgs/fastify-json-to-xml/issues/214)) ([42b3aa4](https://github.com/Fdawgs/fastify-json-to-xml/commit/42b3aa45ad11c001b0dfa7454eac2d809307765b))
+* **deps:** bump JustinBeckwith/linkinator-action from 1.11.0 to 2.3 ([#179](https://github.com/Fdawgs/fastify-json-to-xml/issues/179)) ([c879fb8](https://github.com/Fdawgs/fastify-json-to-xml/commit/c879fb813a688dbbed388dbc4691e3da6c90bd39))
+* **deps:** bump the fdawgs-owned group with 3 updates ([#235](https://github.com/Fdawgs/fastify-json-to-xml/issues/235)) ([d47c5a0](https://github.com/Fdawgs/fastify-json-to-xml/commit/d47c5a0047685ebefd2828ccd57f2ac470206c23))
+* **deps:** bump the fdawgs-owned group with 3 updates ([#243](https://github.com/Fdawgs/fastify-json-to-xml/issues/243)) ([1109e73](https://github.com/Fdawgs/fastify-json-to-xml/commit/1109e735780245fa1c840907bf9a6a111b4c295d))
+* **deps:** bump the github-owned group across 1 directory with 3 updates ([#248](https://github.com/Fdawgs/fastify-json-to-xml/issues/248)) ([bb56893](https://github.com/Fdawgs/fastify-json-to-xml/commit/bb56893ea7927eaa7cd4e3c3f6f0b9a8a636b7e3))
+* **link-check:** use reusable workflow ([#191](https://github.com/Fdawgs/fastify-json-to-xml/issues/191)) ([901c823](https://github.com/Fdawgs/fastify-json-to-xml/commit/901c8237163f0eb43a5039b003155aee185eb3ed))
+* **link-check:** use sha instead of tag ([#217](https://github.com/Fdawgs/fastify-json-to-xml/issues/217)) ([ec7f85d](https://github.com/Fdawgs/fastify-json-to-xml/commit/ec7f85d17e4906a8a171fecf2d444c0339c92395))
+* **lock-threads:** reduce frequency from daily to monthly ([#220](https://github.com/Fdawgs/fastify-json-to-xml/issues/220)) ([86df41c](https://github.com/Fdawgs/fastify-json-to-xml/commit/86df41c51905749cca67338256d30c9185a03494))
+* **lock-threads:** set cron to every day ([#190](https://github.com/Fdawgs/fastify-json-to-xml/issues/190)) ([65328e3](https://github.com/Fdawgs/fastify-json-to-xml/commit/65328e3d374335336106cb389c19b7a9f7540a5c))
+* use full-length commit sha for github owned actions ([#224](https://github.com/Fdawgs/fastify-json-to-xml/issues/224)) ([a382af5](https://github.com/Fdawgs/fastify-json-to-xml/commit/a382af5094f26c56ae97c5efbf22caeef7aef47a))
+
+
+### Dependencies
+
+* **.devcontainer:** add lockfile; use bookworm for base image ([#225](https://github.com/Fdawgs/fastify-json-to-xml/issues/225)) ([19ba9a0](https://github.com/Fdawgs/fastify-json-to-xml/commit/19ba9a0e189d84282edf98d277ebe719844010ad))
+* **dependabot:** add cooldown for actions and devcontainers ([#232](https://github.com/Fdawgs/fastify-json-to-xml/issues/232)) ([bb3f914](https://github.com/Fdawgs/fastify-json-to-xml/commit/bb3f914c613c923f2f135a480af1f69389071567))
+* **dependabot:** group github-owned updates ([#218](https://github.com/Fdawgs/fastify-json-to-xml/issues/218)) ([f12ad5e](https://github.com/Fdawgs/fastify-json-to-xml/commit/f12ad5eb4a30d547f2fd6c17ae51ea90a9684371))
+* **dependabot:** remove redundant includes cooldown array ([#250](https://github.com/Fdawgs/fastify-json-to-xml/issues/250)) ([413b746](https://github.com/Fdawgs/fastify-json-to-xml/commit/413b746f03cb6b0f15780b1106f6e563f0a9b9c1))
+* **deps-dev:** bump @types/node from 24.10.4 to 25.0.3 ([#201](https://github.com/Fdawgs/fastify-json-to-xml/issues/201)) ([c1e3a63](https://github.com/Fdawgs/fastify-json-to-xml/commit/c1e3a63bf650f372f27ff009b16819cd17ea593f))
+* **deps-dev:** bump @types/node from 25.9.4 to 26.0.0 ([#247](https://github.com/Fdawgs/fastify-json-to-xml/issues/247)) ([f6a3315](https://github.com/Fdawgs/fastify-json-to-xml/commit/f6a3315e33f433fc2b814311a401923e9b39f391))
+* **deps-dev:** bump c8 from 10.1.3 to 11.0.0 ([#208](https://github.com/Fdawgs/fastify-json-to-xml/issues/208)) ([f5714a6](https://github.com/Fdawgs/fastify-json-to-xml/commit/f5714a6145393dbd92cdcd347c1c429466a6db3a))
+* **deps-dev:** bump licensee from 11.1.1 to 12.0.1 ([#202](https://github.com/Fdawgs/fastify-json-to-xml/issues/202)) ([856ff4f](https://github.com/Fdawgs/fastify-json-to-xml/commit/856ff4ffc8fa126d883de50672868a7785001d57))
+* **deps-dev:** bump prettier from 3.6.2 to 3.8.4 ([#246](https://github.com/Fdawgs/fastify-json-to-xml/issues/246)) ([149a7e5](https://github.com/Fdawgs/fastify-json-to-xml/commit/149a7e5e66fe746f7e24951c5da9d2a36998b085))
+* **deps-dev:** bump prettier from 3.8.4 to 3.8.5 ([#251](https://github.com/Fdawgs/fastify-json-to-xml/issues/251)) ([574b8e1](https://github.com/Fdawgs/fastify-json-to-xml/commit/574b8e120a6f336a4b2b94f56c5db2400da07230))
+* **deps-dev:** bump the eslint group across 1 directory with 2 updates ([#196](https://github.com/Fdawgs/fastify-json-to-xml/issues/196)) ([73974d7](https://github.com/Fdawgs/fastify-json-to-xml/commit/73974d707f45595c37277c550f003512170e6e20))
+* **deps-dev:** bump the eslint group across 1 directory with 2 updates ([#227](https://github.com/Fdawgs/fastify-json-to-xml/issues/227)) ([c50effa](https://github.com/Fdawgs/fastify-json-to-xml/commit/c50effa3ebc6b32ab5c2ec1977a8f4d4387abdf6))
+* **deps-dev:** bump typescript from 5.9.3 to 6.0.2 ([#212](https://github.com/Fdawgs/fastify-json-to-xml/issues/212)) ([11f7329](https://github.com/Fdawgs/fastify-json-to-xml/commit/11f7329f2b678a9421cf09ffecae9df375e79a7c))
+* **deps-dev:** pin prettier ([#239](https://github.com/Fdawgs/fastify-json-to-xml/issues/239)) ([9add804](https://github.com/Fdawgs/fastify-json-to-xml/commit/9add804cc4cbd8d34a559ae5421a27f7d85a68e4))
+* **deps-dev:** remove husky ([#192](https://github.com/Fdawgs/fastify-json-to-xml/issues/192)) ([d8cc274](https://github.com/Fdawgs/fastify-json-to-xml/commit/d8cc2744710a0af8a80f343c1547950dd2c321b1))
+* **deps:** bump fastify-plugin in the fastify-core group ([#245](https://github.com/Fdawgs/fastify-json-to-xml/issues/245)) ([0143e9e](https://github.com/Fdawgs/fastify-json-to-xml/commit/0143e9eb84ffe2852d8bfc0d27f545fe605f5015))
+
+
+### Documentation
+
+* fix broken links ([#241](https://github.com/Fdawgs/fastify-json-to-xml/issues/241)) ([f13fba9](https://github.com/Fdawgs/fastify-json-to-xml/commit/f13fba951024b905ad9e69530692f12a6f0dc1fe))
+* **readme:** add strict directive to cjs examples ([#249](https://github.com/Fdawgs/fastify-json-to-xml/issues/249)) ([80f1f40](https://github.com/Fdawgs/fastify-json-to-xml/commit/80f1f4009c2dc3eb3ee0aa3cc8971f1a6e35f744))
+* **readme:** remove stray quote ([#219](https://github.com/Fdawgs/fastify-json-to-xml/issues/219)) ([d967d02](https://github.com/Fdawgs/fastify-json-to-xml/commit/d967d027cab23be95ba67ee925bfb1663cfe1760))
+* **readme:** use shell over bash for command examples ([#209](https://github.com/Fdawgs/fastify-json-to-xml/issues/209)) ([6f52ca2](https://github.com/Fdawgs/fastify-json-to-xml/commit/6f52ca2c0031761bee2e8911fded184eb6a7c161))
+
+
+### Miscellaneous
+
+* **.devcontainer:** remove prepare script call ([#197](https://github.com/Fdawgs/fastify-json-to-xml/issues/197)) ([524e636](https://github.com/Fdawgs/fastify-json-to-xml/commit/524e6360e84330dc0a75c15ffcb3df6b50b7c714))
+* **.editorconfig:** add file to enforce consistent coding styles ([#186](https://github.com/Fdawgs/fastify-json-to-xml/issues/186)) ([49265af](https://github.com/Fdawgs/fastify-json-to-xml/commit/49265af6b8c170b4a28f8480ab766b0755977f04))
+* **.editorconfig:** use spaces for yml file indentation ([#188](https://github.com/Fdawgs/fastify-json-to-xml/issues/188)) ([9b74271](https://github.com/Fdawgs/fastify-json-to-xml/commit/9b74271388eaacf999ce666c09226e7182cf72df))
+* **.npmrc:** add min-release-age ([#215](https://github.com/Fdawgs/fastify-json-to-xml/issues/215)) ([25e0943](https://github.com/Fdawgs/fastify-json-to-xml/commit/25e09430eefeebd242ee6d490d64c0310f72f1b7))
+* **.nvmrc:** remove redundant prefix ([#222](https://github.com/Fdawgs/fastify-json-to-xml/issues/222)) ([c560d1c](https://github.com/Fdawgs/fastify-json-to-xml/commit/c560d1c77cf6df6301107faaf608381296c4b5ff))
+* **.vscode:** remove redundant javascript default formatter ([#234](https://github.com/Fdawgs/fastify-json-to-xml/issues/234)) ([a2ce7ce](https://github.com/Fdawgs/fastify-json-to-xml/commit/a2ce7ce239b63e1b87065c266b88d3e01fa0e196))
+* **.vscode:** update js and telemetry settings ([#210](https://github.com/Fdawgs/fastify-json-to-xml/issues/210)) ([540d7dc](https://github.com/Fdawgs/fastify-json-to-xml/commit/540d7dc2f97b6b0c7f3743e9ba0bd64ed471d91d))
+* align editorconfig and prettier ignore rules ([#238](https://github.com/Fdawgs/fastify-json-to-xml/issues/238)) ([274a315](https://github.com/Fdawgs/fastify-json-to-xml/commit/274a31534c93965d59b233b246b73c2b86fe9372))
+* **eslint.config:** `includeIgnoreFile` from `eslint/config` ([#233](https://github.com/Fdawgs/fastify-json-to-xml/issues/233)) ([65c72a0](https://github.com/Fdawgs/fastify-json-to-xml/commit/65c72a09a1cd1104cce1b6f1ef95f615e63ab9eb))
+* **eslint.config:** stop applying to jsx files ([#187](https://github.com/Fdawgs/fastify-json-to-xml/issues/187)) ([a39a9dd](https://github.com/Fdawgs/fastify-json-to-xml/commit/a39a9dde062600d99fb2b43e8361b0b0a07b6ecc))
+* **index:** wrap false in backticks ([#221](https://github.com/Fdawgs/fastify-json-to-xml/issues/221)) ([3b3bbc3](https://github.com/Fdawgs/fastify-json-to-xml/commit/3b3bbc3771435666ba3cf9b66c3c324d214cdefb))
+* **license:** add contact email ([#203](https://github.com/Fdawgs/fastify-json-to-xml/issues/203)) ([08d451c](https://github.com/Fdawgs/fastify-json-to-xml/commit/08d451c957430ae7380a0114c80e6ceae24e7be2))
+* move tests from src to test dir ([#193](https://github.com/Fdawgs/fastify-json-to-xml/issues/193)) ([9854b65](https://github.com/Fdawgs/fastify-json-to-xml/commit/9854b6528b4ec2942f98a0e9acb131236e64848b))
+* **package:** stop running `lint:prettier` twice on `test` call ([#204](https://github.com/Fdawgs/fastify-json-to-xml/issues/204)) ([2de6ae3](https://github.com/Fdawgs/fastify-json-to-xml/commit/2de6ae3bcdbb6eb7c7bad0822428ec8ea9cc508a))
+* rename lint scripts to reflect use ([#176](https://github.com/Fdawgs/fastify-json-to-xml/issues/176)) ([15efc9c](https://github.com/Fdawgs/fastify-json-to-xml/commit/15efc9c4cb65bd0a8ca09bfdc9ed28a99bec835b))
+* replace http links with https ([#242](https://github.com/Fdawgs/fastify-json-to-xml/issues/242)) ([6a1f825](https://github.com/Fdawgs/fastify-json-to-xml/commit/6a1f825bbfbd582189819fcd006b501fe1a74657))
+* tidy dotfiles, remove redundant deps ([#194](https://github.com/Fdawgs/fastify-json-to-xml/issues/194)) ([082e2ba](https://github.com/Fdawgs/fastify-json-to-xml/commit/082e2ba6178ff941dccacbd9276e36faa6919726))
+
 ## [3.0.0](https://github.com/Fdawgs/fastify-json-to-xml/compare/v2.0.2...v3.0.0) (2025-10-13)
 
 
