@@ -17,7 +17,7 @@ describe("JSON-To-XML plugin", () => {
 	};
 
 	before(async () => {
-		server = Fastify({ pluginTimeout: 0 });
+		server = Fastify();
 
 		server
 			.register(async (noReplaceInvalidCharContext) => {
