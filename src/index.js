@@ -1,7 +1,7 @@
 "use strict";
 
 const fp = require("fastify-plugin");
-const accepts = require("accepts");
+const Negotiator = require("negotiator");
 const { parse: xmlParse } = require("js2xmlparser");
 const { parse: secureParse } = require("secure-json-parse");
 
@@ -45,7 +45,8 @@ function fastifyJsonToXml(server, options, done) {
 					?.toString()
 					.toLowerCase()
 					.includes("application/json") &&
-				accepts(req.raw).type(ACCEPTED_TYPES) === "application/xml"
+				new Negotiator(req.raw).mediaType(ACCEPTED_TYPES) ===
+					"application/xml"
 			) {
 				res.type("application/xml; charset=utf-8");
 				return xmlParse(
