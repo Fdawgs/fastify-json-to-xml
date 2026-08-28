@@ -17,6 +17,10 @@ describe("JSON-To-XML plugin", () => {
 	};
 	const cleanBody = { "test-key": "test-value" };
 	const jsonSequenceBody = `\u001E${JSON.stringify(cleanBody)}\n`;
+	const escapedValue = '<tag attr="value">&named;]]>"\'';
+	const prototypeKeyBody = JSON.parse(
+		'{"__proto__":{"polluted":true},"constructor":{"prototype":{"polluted":true}},"safe":"value"}'
+	);
 
 	before(async () => {
 		server = Fastify();
@@ -66,6 +70,12 @@ describe("JSON-To-XML plugin", () => {
 					})
 					.get("/invalid-vary", (_req, res) => {
 						res.header("vary", 1).send(cleanBody);
+					})
+					.get("/escaped-value", (_req, res) => {
+						res.send({ value: escapedValue });
+					})
+					.get("/prototype-keys", (_req, res) => {
+						res.send(prototypeKeyBody);
 					});
 			})
 			.register(async (replaceInvalidCharContext) => {
@@ -278,6 +288,50 @@ describe("JSON-To-XML plugin", () => {
 				t.assert.deepStrictEqual(response.headers.vary, expectedVary);
 			});
 		}
+	});
+
+	describe("Security handling", () => {
+		it("Escapes XML structural characters in values", async (/** @type {TestContext} */ t) => {
+			const response = await server.inject({
+				method: "GET",
+				url: "/escaped-value",
+				headers: {
+					accept: "application/xml",
+				},
+			});
+
+			t.plan(6);
+			t.assert.strictEqual(response.statusCode, 200);
+			t.assert.strictEqual(
+				response.headers["content-type"],
+				"application/xml; charset=utf-8"
+			);
+			t.assert.strictEqual(response.body.includes("&lt;tag"), true);
+			t.assert.strictEqual(response.body.includes("&amp;named;"), true);
+			t.assert.strictEqual(response.body.includes("<tag"), false);
+			t.assert.strictEqual(response.body.includes("]]>"), false);
+		});
+
+		it("Rejects prototype-related keys without prototype pollution", async (/** @type {TestContext} */ t) => {
+			const response = await server.inject({
+				method: "GET",
+				url: "/prototype-keys",
+				headers: {
+					accept: "application/xml",
+				},
+			});
+
+			t.plan(3);
+			t.assert.strictEqual(response.statusCode, 500);
+			t.assert.strictEqual(
+				response.headers["content-type"],
+				"application/xml; charset=utf-8"
+			);
+			t.assert.strictEqual(
+				Object.hasOwn(Object.prototype, "polluted"),
+				false
+			);
+		});
 	});
 
 	describe("Content-Type handling", () => {
