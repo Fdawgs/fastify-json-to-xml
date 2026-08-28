@@ -6,6 +6,9 @@ const { parse: xmlParse } = require("js2xmlparser");
 const { parse: secureParse } = require("secure-json-parse");
 
 const ACCEPTED_TYPES = ["application/json", "application/xml"];
+const JSON_CONTENT_TYPE = "application/json; charset=utf-8";
+// Cache
+const JSON_CONTENT_TYPE_REG = /^application\/json[ \t]*(?:;|$)/iu;
 
 /**
  * @typedef {object} FastifyJsonToXmlOptions
@@ -38,25 +41,31 @@ function fastifyJsonToXml(server, options, done) {
 		"onSend",
 		/** @type {import("fastify").onSendAsyncHookHandler} */
 		async function jsonToXml(req, res, payload) {
-			if (
-				typeof payload === "string" &&
-				res
-					.getHeader("content-type")
-					?.toString()
-					.toLowerCase()
-					.includes("application/json") &&
-				new Negotiator(req.raw).mediaType(ACCEPTED_TYPES) ===
-					"application/xml"
-			) {
-				res.type("application/xml; charset=utf-8");
-				return xmlParse(
-					"response",
-					secureParse(payload),
-					xmlParseOptions
-				);
+			// Fastify will have serialised JSON into string by this point
+			if (typeof payload !== "string") {
+				return payload;
 			}
 
-			return payload;
+			// Check the existing content-type header to see if the response is JSON
+			const contentType = res.getHeader("content-type");
+			if (
+				typeof contentType !== "string" ||
+				(contentType !== JSON_CONTENT_TYPE &&
+					!JSON_CONTENT_TYPE_REG.test(contentType))
+			) {
+				return payload;
+			}
+
+			// Check the request's Accept header to see if the client wants XML
+			if (
+				new Negotiator(req.raw).mediaType(ACCEPTED_TYPES) !==
+				"application/xml"
+			) {
+				return payload;
+			}
+
+			res.type("application/xml; charset=utf-8");
+			return xmlParse("response", secureParse(payload), xmlParseOptions);
 		}
 	);
 	done();
