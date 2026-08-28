@@ -39,11 +39,12 @@ function fastifyJsonToXml(server, options, done) {
 
 	server.addHook(
 		"onSend",
-		/** @type {import("fastify").onSendAsyncHookHandler} */
-		async function jsonToXml(req, res, payload) {
+		/** @type {import("fastify").onSendHookHandler} */
+		function jsonToXml(req, res, payload, hookDone) {
 			// Fastify will have serialised JSON into string by this point
 			if (typeof payload !== "string") {
-				return payload;
+				hookDone(null, payload);
+				return;
 			}
 
 			// Check the existing content-type header to see if the response is JSON
@@ -53,7 +54,8 @@ function fastifyJsonToXml(server, options, done) {
 				(contentType !== JSON_CONTENT_TYPE &&
 					!JSON_CONTENT_TYPE_REG.test(contentType))
 			) {
-				return payload;
+				hookDone(null, payload);
+				return;
 			}
 
 			// Check the request's Accept header to see if the client wants XML
@@ -61,11 +63,20 @@ function fastifyJsonToXml(server, options, done) {
 				new Negotiator(req.raw).mediaType(ACCEPTED_TYPES) !==
 				"application/xml"
 			) {
-				return payload;
+				hookDone(null, payload);
+				return;
 			}
 
 			res.type("application/xml; charset=utf-8");
-			return xmlParse("response", secureParse(payload), xmlParseOptions);
+
+			try {
+				hookDone(
+					null,
+					xmlParse("response", secureParse(payload), xmlParseOptions)
+				);
+			} catch (error) {
+				hookDone(/** @type {Error} */ (error));
+			}
 		}
 	);
 	done();
