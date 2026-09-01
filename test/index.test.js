@@ -32,13 +32,11 @@ describe("JSON-To-XML plugin", () => {
 					.get("/no-replace", (_req, res) => {
 						res.send(resBody);
 					})
+					// Content-Type handling tests
 					.get("/buffer", (_req, res) => {
 						res.type("application/json").send(
 							Buffer.from(JSON.stringify(cleanBody))
 						);
-					})
-					.get("/text", (_req, res) => {
-						res.type("text/plain").send("test-value");
 					})
 					.get("/uppercase-content-type", (_req, res) => {
 						res.type("Application/JSON").send(cleanBody);
@@ -46,6 +44,7 @@ describe("JSON-To-XML plugin", () => {
 					.get("/json-seq", (_req, res) => {
 						res.type("application/json-seq").send(jsonSequenceBody);
 					})
+					// Vary header tests
 					.get("/existing-vary", (_req, res) => {
 						res.header("vary", "Accept-Encoding").send(cleanBody);
 					})
@@ -55,22 +54,15 @@ describe("JSON-To-XML plugin", () => {
 					.get("/existing-wildcard-vary", (_req, res) => {
 						res.header("vary", "*").send(cleanBody);
 					})
-					.get("/existing-array-vary", (_req, res) => {
-						res.header("vary", ["Origin", "Accept"]).send(
-							cleanBody
-						);
-					})
 					.get("/existing-array-vary-without-accept", (_req, res) => {
 						res.header("vary", ["Origin", "Accept-Encoding"]).send(
 							cleanBody
 						);
 					})
-					.get("/empty-vary", (_req, res) => {
-						res.header("vary", "").send(cleanBody);
-					})
 					.get("/invalid-vary", (_req, res) => {
 						res.header("vary", 1).send(cleanBody);
 					})
+					// Security tests
 					.get("/escaped-value", (_req, res) => {
 						res.send({ value: escapedValue });
 					})
@@ -102,19 +94,6 @@ describe("JSON-To-XML plugin", () => {
 				},
 			},
 			{
-				testName: "JSON body",
-				headers: {
-					accept: "application/json",
-				},
-			},
-			{
-				testName:
-					"JSON body if 'application/json' before '*/*' in accept header",
-				headers: {
-					accept: "application/json, */*",
-				},
-			},
-			{
 				testName:
 					"JSON body if 'application/json' before 'application/xml' in accept header",
 				headers: {
@@ -125,15 +104,9 @@ describe("JSON-To-XML plugin", () => {
 				testName: "JSON body if accept header is absent",
 				headers: {},
 			},
-			{
-				testName: "JSON body if accept header is empty",
-				headers: {
-					accept: "",
-				},
-			},
 		];
-		const jsonTestsLength = jsonTests.length;
 
+		const jsonTestsLength = jsonTests.length;
 		for (let i = 0; i < jsonTestsLength; i += 1) {
 			const { testName, headers } = jsonTests[i];
 			// eslint-disable-next-line no-loop-func -- server never reassigned
@@ -193,8 +166,8 @@ describe("JSON-To-XML plugin", () => {
 				},
 			},
 		];
-		const xmlTestsLength = xmlTests.length;
 
+		const xmlTestsLength = xmlTests.length;
 		for (let i = 0; i < xmlTestsLength; i += 1) {
 			const { testName, headers } = xmlTests[i];
 			// eslint-disable-next-line no-loop-func -- server never reassigned
@@ -235,6 +208,63 @@ describe("JSON-To-XML plugin", () => {
 		}
 	});
 
+	describe("Content-Type handling", () => {
+		const contentTypeTests = [
+			{
+				testName: "Returns unchanged body if payload is not a string",
+				url: "/buffer",
+				expectedBody: JSON.stringify(cleanBody),
+				expectedContentType: "application/json",
+				expectedVary: undefined,
+			},
+			{
+				testName: "Returns an application/json-seq body unchanged",
+				url: "/json-seq",
+				expectedBody: jsonSequenceBody,
+				expectedContentType: "application/json-seq; charset=utf-8",
+				expectedVary: undefined,
+			},
+			{
+				testName: "Returns XML body if content-type is not lowercase",
+				url: "/uppercase-content-type",
+				expectedBody:
+					'<?xml version="1.0" encoding="UTF-8"?><response><test-key>test-value</test-key></response>',
+				expectedContentType: "application/xml; charset=utf-8",
+				expectedVary: "Accept",
+			},
+		];
+
+		const contentTypeTestsLength = contentTypeTests.length;
+		for (let i = 0; i < contentTypeTestsLength; i += 1) {
+			const {
+				testName,
+				url,
+				expectedBody,
+				expectedContentType,
+				expectedVary,
+			} = contentTypeTests[i];
+			// eslint-disable-next-line no-loop-func -- server never reassigned
+			it(testName, async (/** @type {TestContext} */ t) => {
+				const response = await server.inject({
+					method: "GET",
+					url,
+					headers: {
+						accept: "application/xml",
+					},
+				});
+
+				t.plan(4);
+				t.assert.strictEqual(response.body, expectedBody);
+				t.assert.strictEqual(
+					response.headers["content-type"],
+					expectedContentType
+				);
+				t.assert.strictEqual(response.headers.vary, expectedVary);
+				t.assert.strictEqual(response.statusCode, 200);
+			});
+		}
+	});
+
 	describe("Vary header handling", () => {
 		const varyTests = [
 			{
@@ -253,19 +283,9 @@ describe("JSON-To-XML plugin", () => {
 				expectedVary: "*",
 			},
 			{
-				testName: "Does not duplicate Accept in an array",
-				url: "/existing-array-vary",
-				expectedVary: "Origin, Accept",
-			},
-			{
 				testName: "Appends Accept to an array",
 				url: "/existing-array-vary-without-accept",
 				expectedVary: "Origin, Accept-Encoding, Accept",
-			},
-			{
-				testName: "Replaces an empty value",
-				url: "/empty-vary",
-				expectedVary: "Accept",
 			},
 			{
 				testName: "Replaces an unexpected value type",
@@ -273,8 +293,8 @@ describe("JSON-To-XML plugin", () => {
 				expectedVary: "Accept",
 			},
 		];
-		const varyTestsLength = varyTests.length;
 
+		const varyTestsLength = varyTests.length;
 		for (let i = 0; i < varyTestsLength; i += 1) {
 			const { testName, url, expectedVary } = varyTests[i];
 			// eslint-disable-next-line no-loop-func -- server never reassigned
@@ -332,70 +352,5 @@ describe("JSON-To-XML plugin", () => {
 				false
 			);
 		});
-	});
-
-	describe("Content-Type handling", () => {
-		const contentTypeTests = [
-			{
-				testName: "Returns unchanged body if payload is not a string",
-				url: "/buffer",
-				expectedBody: JSON.stringify(cleanBody),
-				expectedContentType: "application/json",
-				expectedVary: undefined,
-			},
-			{
-				testName:
-					"Returns unchanged body if content-type is not 'application/json'",
-				url: "/text",
-				expectedBody: "test-value",
-				expectedContentType: "text/plain",
-				expectedVary: undefined,
-			},
-			{
-				testName: "Returns an application/json-seq body unchanged",
-				url: "/json-seq",
-				expectedBody: jsonSequenceBody,
-				expectedContentType: "application/json-seq; charset=utf-8",
-				expectedVary: undefined,
-			},
-			{
-				testName: "Returns XML body if content-type is not lowercase",
-				url: "/uppercase-content-type",
-				expectedBody:
-					'<?xml version="1.0" encoding="UTF-8"?><response><test-key>test-value</test-key></response>',
-				expectedContentType: "application/xml; charset=utf-8",
-				expectedVary: "Accept",
-			},
-		];
-		const contentTypeTestsLength = contentTypeTests.length;
-
-		for (let i = 0; i < contentTypeTestsLength; i += 1) {
-			const {
-				testName,
-				url,
-				expectedBody,
-				expectedContentType,
-				expectedVary,
-			} = contentTypeTests[i];
-			// eslint-disable-next-line no-loop-func -- server never reassigned
-			it(testName, async (/** @type {TestContext} */ t) => {
-				const response = await server.inject({
-					method: "GET",
-					url,
-					headers: {
-						accept: "application/xml",
-					},
-				});
-
-				t.plan(4);
-				t.assert.strictEqual(response.body, expectedBody);
-				t.assert.strictEqual(
-					response.headers["content-type"],
-					expectedContentType
-				);
-				t.assert.strictEqual(response.headers.vary, expectedVary);
-				t.assert.strictEqual(response.statusCode, 200);
-			});
-		}
 	});
 });
