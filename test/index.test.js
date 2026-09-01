@@ -41,6 +41,31 @@ describe("JSON-To-XML plugin", () => {
 					})
 					.get("/json-seq", (_req, res) => {
 						res.type("application/json-seq").send(jsonSequenceBody);
+					})
+					.get("/existing-vary", (_req, res) => {
+						res.header("vary", "Accept-Encoding").send(cleanBody);
+					})
+					.get("/existing-accept-vary", (_req, res) => {
+						res.header("vary", "Origin, ACCEPT").send(cleanBody);
+					})
+					.get("/existing-wildcard-vary", (_req, res) => {
+						res.header("vary", "*").send(cleanBody);
+					})
+					.get("/existing-array-vary", (_req, res) => {
+						res.header("vary", ["Origin", "Accept"]).send(
+							cleanBody
+						);
+					})
+					.get("/existing-array-vary-without-accept", (_req, res) => {
+						res.header("vary", ["Origin", "Accept-Encoding"]).send(
+							cleanBody
+						);
+					})
+					.get("/empty-vary", (_req, res) => {
+						res.header("vary", "").send(cleanBody);
+					})
+					.get("/invalid-vary", (_req, res) => {
+						res.header("vary", 1).send(cleanBody);
 					});
 			})
 			.register(async (replaceInvalidCharContext) => {
@@ -109,12 +134,13 @@ describe("JSON-To-XML plugin", () => {
 					headers,
 				});
 
-				t.plan(3);
+				t.plan(4);
 				t.assert.deepStrictEqual(JSON.parse(response.body), resBody);
 				t.assert.strictEqual(
 					response.headers["content-type"],
 					"application/json; charset=utf-8"
 				);
+				t.assert.strictEqual(response.headers.vary, "Accept");
 				t.assert.strictEqual(response.statusCode, 200);
 			});
 		}
@@ -174,7 +200,7 @@ describe("JSON-To-XML plugin", () => {
 					headers,
 				});
 
-				t.plan(6);
+				t.plan(8);
 				t.assert.strictEqual(
 					noReplaceResponse.body,
 					'<?xml version="1.0" encoding="UTF-8"?><response><statusCode>500</statusCode><error>Internal Server Error</error><message>in XML document > element "response": element name "$test-key" should not contain characters not allowed in XML names</message></response>'
@@ -183,6 +209,7 @@ describe("JSON-To-XML plugin", () => {
 					noReplaceResponse.headers["content-type"],
 					"application/xml; charset=utf-8"
 				);
+				t.assert.strictEqual(noReplaceResponse.headers.vary, "Accept");
 				t.assert.strictEqual(noReplaceResponse.statusCode, 500);
 				t.assert.strictEqual(
 					replaceResponse.body,
@@ -192,7 +219,63 @@ describe("JSON-To-XML plugin", () => {
 					replaceResponse.headers["content-type"],
 					"application/xml; charset=utf-8"
 				);
+				t.assert.strictEqual(replaceResponse.headers.vary, "Accept");
 				t.assert.strictEqual(replaceResponse.statusCode, 200);
+			});
+		}
+	});
+
+	describe("Vary header handling", () => {
+		const varyTests = [
+			{
+				testName: "Appends Accept as a distinct field",
+				url: "/existing-vary",
+				expectedVary: "Accept-Encoding, Accept",
+			},
+			{
+				testName: "Does not duplicate Accept",
+				url: "/existing-accept-vary",
+				expectedVary: "Origin, ACCEPT",
+			},
+			{
+				testName: "Preserves a wildcard",
+				url: "/existing-wildcard-vary",
+				expectedVary: "*",
+			},
+			{
+				testName: "Does not duplicate Accept in an array",
+				url: "/existing-array-vary",
+				expectedVary: "Origin, Accept",
+			},
+			{
+				testName: "Appends Accept to an array",
+				url: "/existing-array-vary-without-accept",
+				expectedVary: "Origin, Accept-Encoding, Accept",
+			},
+			{
+				testName: "Replaces an empty value",
+				url: "/empty-vary",
+				expectedVary: "Accept",
+			},
+			{
+				testName: "Replaces an unexpected value type",
+				url: "/invalid-vary",
+				expectedVary: "Accept",
+			},
+		];
+		const varyTestsLength = varyTests.length;
+
+		for (let i = 0; i < varyTestsLength; i += 1) {
+			const { testName, url, expectedVary } = varyTests[i];
+			// eslint-disable-next-line no-loop-func -- server never reassigned
+			it(testName, async (/** @type {TestContext} */ t) => {
+				const response = await server.inject({
+					method: "GET",
+					url,
+				});
+
+				t.plan(1);
+				t.assert.deepStrictEqual(response.headers.vary, expectedVary);
 			});
 		}
 	});
@@ -204,6 +287,7 @@ describe("JSON-To-XML plugin", () => {
 				url: "/buffer",
 				expectedBody: JSON.stringify(cleanBody),
 				expectedContentType: "application/json",
+				expectedVary: undefined,
 			},
 			{
 				testName:
@@ -211,12 +295,14 @@ describe("JSON-To-XML plugin", () => {
 				url: "/text",
 				expectedBody: "test-value",
 				expectedContentType: "text/plain",
+				expectedVary: undefined,
 			},
 			{
 				testName: "Returns an application/json-seq body unchanged",
 				url: "/json-seq",
 				expectedBody: jsonSequenceBody,
 				expectedContentType: "application/json-seq; charset=utf-8",
+				expectedVary: undefined,
 			},
 			{
 				testName: "Returns XML body if content-type is not lowercase",
@@ -224,13 +310,19 @@ describe("JSON-To-XML plugin", () => {
 				expectedBody:
 					'<?xml version="1.0" encoding="UTF-8"?><response><test-key>test-value</test-key></response>',
 				expectedContentType: "application/xml; charset=utf-8",
+				expectedVary: "Accept",
 			},
 		];
 		const contentTypeTestsLength = contentTypeTests.length;
 
 		for (let i = 0; i < contentTypeTestsLength; i += 1) {
-			const { testName, url, expectedBody, expectedContentType } =
-				contentTypeTests[i];
+			const {
+				testName,
+				url,
+				expectedBody,
+				expectedContentType,
+				expectedVary,
+			} = contentTypeTests[i];
 			// eslint-disable-next-line no-loop-func -- server never reassigned
 			it(testName, async (/** @type {TestContext} */ t) => {
 				const response = await server.inject({
@@ -241,12 +333,13 @@ describe("JSON-To-XML plugin", () => {
 					},
 				});
 
-				t.plan(3);
+				t.plan(4);
 				t.assert.strictEqual(response.body, expectedBody);
 				t.assert.strictEqual(
 					response.headers["content-type"],
 					expectedContentType
 				);
+				t.assert.strictEqual(response.headers.vary, expectedVary);
 				t.assert.strictEqual(response.statusCode, 200);
 			});
 		}
