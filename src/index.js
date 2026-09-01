@@ -4,6 +4,7 @@ const fp = require("fastify-plugin");
 const Negotiator = require("negotiator");
 const { parse: xmlParse } = require("js2xmlparser");
 const { parse: secureParse } = require("secure-json-parse");
+const { append: appendVary } = require("vary");
 
 const ACCEPTED_TYPES = ["application/json", "application/xml"];
 const JSON_CONTENT_TYPE = "application/json; charset=utf-8";
@@ -56,6 +57,15 @@ function fastifyJsonToXml(server, options, done) {
 			) {
 				hookDone(null, payload);
 				return;
+			}
+
+			const varyHeader = res.getHeader("vary");
+			if (typeof varyHeader === "string") {
+				res.header("vary", appendVary(varyHeader, "Accept"));
+			} else if (Array.isArray(varyHeader)) {
+				res.header("vary", appendVary(varyHeader.join(", "), "Accept"));
+			} else {
+				res.header("vary", "Accept");
 			}
 
 			// Check the request's Accept header to see if the client wants XML

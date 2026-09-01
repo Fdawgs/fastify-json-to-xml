@@ -16,6 +16,8 @@ The `fastify-json-to-xml` plugin adds an `onSend` hook that supports serialising
 - The `Accept` HTTP request header only includes 'application/xml'
 - The `Accept` HTTP request header explicitly includes the 'application/xml' media type before 'application/json'
 
+Negotiated responses include `Vary: Accept`, allowing caches to distinguish between JSON and XML representations.
+
 ## Installation
 
 Install using `npm`:
