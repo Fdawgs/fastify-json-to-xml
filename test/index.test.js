@@ -309,7 +309,7 @@ describe("JSON-To-XML plugin", () => {
 			t.assert.strictEqual(response.body.includes("&lt;tag"), true);
 			t.assert.strictEqual(response.body.includes("&amp;named;"), true);
 			t.assert.strictEqual(response.body.includes("<tag"), false);
-			t.assert.strictEqual(response.body.includes("]]>"), false);
+			t.assert.strictEqual(response.body.includes("]]&gt;"), true);
 		});
 
 		it("Rejects prototype-related keys without prototype pollution", async (/** @type {TestContext} */ t) => {
