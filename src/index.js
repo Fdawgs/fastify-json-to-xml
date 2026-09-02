@@ -77,16 +77,20 @@ function fastifyJsonToXml(server, options, done) {
 				return;
 			}
 
-			res.type("application/xml; charset=utf-8");
-
+			let xml;
 			try {
-				hookDone(
-					null,
-					xmlParse("response", secureParse(payload), xmlParseOptions)
+				xml = xmlParse(
+					"response",
+					secureParse(payload),
+					xmlParseOptions
 				);
 			} catch (error) {
 				hookDone(/** @type {Error} */ (error));
+				return;
 			}
+
+			res.type("application/xml; charset=utf-8");
+			hookDone(null, xml);
 		}
 	);
 	done();

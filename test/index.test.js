@@ -44,6 +44,10 @@ describe("JSON-To-XML plugin", () => {
 					.get("/json-seq", (_req, res) => {
 						res.type("application/json-seq").send(jsonSequenceBody);
 					})
+					.get("/control-char-key", (_req, res) => {
+						// Key is an invalid XML name; the error message quoting it is invalid XML too
+						res.send({ "bad\u0001key": "value" });
+					})
 					// Vary header tests
 					.get("/existing-vary", (_req, res) => {
 						res.header("vary", "Accept-Encoding").send(cleanBody);
@@ -263,6 +267,28 @@ describe("JSON-To-XML plugin", () => {
 				t.assert.strictEqual(response.statusCode, 200);
 			});
 		}
+
+		it("Keeps JSON content-type if the error response cannot be converted either", async (/** @type {TestContext} */ t) => {
+			const response = await server.inject({
+				method: "GET",
+				url: "/control-char-key",
+				headers: {
+					accept: "application/xml",
+				},
+			});
+
+			t.plan(4);
+			t.assert.strictEqual(
+				JSON.parse(response.body).error,
+				"Internal Server Error"
+			);
+			t.assert.strictEqual(
+				response.headers["content-type"],
+				"application/json; charset=utf-8"
+			);
+			t.assert.strictEqual(response.headers.vary, "Accept");
+			t.assert.strictEqual(response.statusCode, 500);
+		});
 	});
 
 	describe("Vary header handling", () => {
